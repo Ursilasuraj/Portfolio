@@ -11,14 +11,16 @@
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    actions.querySelectorAll('a, button.theme-btn, button.lang-btn').forEach((el) => {
-      el.addEventListener('click', () => {
-        if (window.matchMedia('(max-width: 720px)').matches && el.tagName === 'A') {
-          actions.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
+    const closeOnMobile = () => {
+      if (window.matchMedia('(max-width: 720px)').matches) {
+        actions.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    };
+
+    actions.querySelectorAll('.nav-links a').forEach((el) => el.addEventListener('click', closeOnMobile));
+    actions.querySelectorAll('select.theme-select').forEach((el) => el.addEventListener('change', closeOnMobile));
+    actions.querySelectorAll('button.lang-toggle').forEach((el) => el.addEventListener('click', closeOnMobile));
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && actions.classList.contains('is-open')) {
@@ -31,9 +33,12 @@
 
   const here = (location.pathname.split('/').pop() || 'index.html').replace(/^$/, 'index.html');
   document.querySelectorAll('.nav-links a').forEach((link) => {
-    const target = link.getAttribute('href');
-    if (target === here || (here === 'index.html' && target === './')) {
-      link.setAttribute('aria-current', 'page');
-    }
+    if (link.getAttribute('href') === here) link.setAttribute('aria-current', 'page');
   });
+  // "Home" isn't in the link list (the logo already covers it) — mark the brand link current
+  // on the homepage so it gets the same visual/semantic treatment as any other active page.
+  if (here === 'index.html') {
+    const brand = document.querySelector('.brand');
+    if (brand) brand.setAttribute('aria-current', 'page');
+  }
 })();

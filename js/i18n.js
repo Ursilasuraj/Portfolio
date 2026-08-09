@@ -8,9 +8,11 @@
 (function () {
   const STORAGE_KEY = 'portfolio-lang';
   const root = document.documentElement;
-  const langButtons = document.querySelectorAll('.lang-btn');
+  const toggle = document.querySelector('.lang-toggle');
   const nodes = Array.from(document.querySelectorAll('[data-i18n]'));
   const englishCache = new Map(nodes.map((el) => [el, el.innerHTML]));
+
+  const LABEL = { en: { self: 'EN', switchTo: 'Switch to German' }, de: { self: 'DE', switchTo: 'Switch to English' } };
 
   let dict = null;
   let dictPromise = null;
@@ -43,11 +45,13 @@
       }
     });
     root.setAttribute('lang', lang);
-    langButtons.forEach((btn) => {
-      const isActive = btn.dataset.langOption === lang;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-checked', String(isActive));
-    });
+    if (toggle) {
+      // Button shows the *other* language — the one you'd switch to.
+      const other = lang === 'en' ? 'de' : 'en';
+      toggle.textContent = LABEL[other].self;
+      toggle.setAttribute('aria-label', LABEL[lang].switchTo);
+      toggle.dataset.langCurrent = lang;
+    }
   }
 
   function setLang(lang) {
@@ -60,17 +64,16 @@
   }
 
   const saved = localStorage.getItem(STORAGE_KEY) || (navigator.language || '').slice(0, 2);
-  if (saved === 'de') setLang('de');
+  if (saved === 'de') {
+    setLang('de');
+  } else {
+    render('en');
+  }
 
-  langButtons.forEach((button, index) => {
-    button.addEventListener('click', () => setLang(button.dataset.langOption));
-    button.addEventListener('keydown', (event) => {
-      if (!['ArrowRight', 'ArrowLeft'].includes(event.key)) return;
-      event.preventDefault();
-      const dir = event.key === 'ArrowRight' ? 1 : -1;
-      const next = (index + dir + langButtons.length) % langButtons.length;
-      langButtons[next].focus();
-      setLang(langButtons[next].dataset.langOption);
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = toggle.dataset.langCurrent === 'de' ? 'en' : 'de';
+      setLang(next);
     });
-  });
+  }
 })();

@@ -245,42 +245,43 @@ a {
   height: 22px;
 }
 
-.theme-switcher {
+/* Two compact, unboxed controls instead of two bordered button-groups (5 buttons total) —
+   a native <select> needs no extra ARIA work to be keyboard/screen-reader accessible, and a
+   single toggle button covers a 2-option language switch without a second pill-group. */
+.nav-controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  padding: 0.35rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--card);
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.theme-btn,
-.lang-btn {
-  border: 0;
-  padding: 0.5rem 0.8rem;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
+.theme-select {
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239fb0c8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 0.55rem center / 14px 14px;
+  color: var(--text);
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  padding: 0.5rem 1.75rem 0.5rem 0.75rem;
+  cursor: pointer;
 }
 
-.theme-btn.active,
-.lang-btn.active {
-  background: var(--accent);
-  color: var(--on-accent);
-  font-weight: 600;
-}
-
-.lang-switcher {
-  display: flex;
-  gap: 0.25rem;
-  padding: 0.35rem;
+.lang-toggle {
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 0.6rem;
   background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  min-width: 2.6rem;
+}
+
+.theme-select:hover,
+.lang-toggle:hover {
+  border-color: var(--accent);
 }
 
 .hero-grid {
@@ -365,27 +366,43 @@ a {
   flex-shrink: 0;
 }
 
-/* Availability / work-permit bar */
+/* Availability / work-permit bar — one bordered row instead of three separately-boxed
+   pills, so it reads as a single fact strip rather than a cluster of badges. */
 .availability-bar {
   margin-top: 1.75rem;
-  padding: 0;
+  padding: 0.85rem 1.1rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  align-items: center;
+  row-gap: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--card);
+  font-size: 0.92rem;
 }
 
 .availability-bar li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  gap: 0.45rem;
   color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 500;
+}
+
+/* The permit sentence is the longest item and often wraps to 2 lines on narrow screens —
+   top-align its dot instead of vertically centering it against the whole wrapped block. */
+.availability-bar li:has(.dot) {
+  align-items: flex-start;
+}
+
+.availability-bar li:has(.dot) .dot {
+  margin-top: 0.5em;
+}
+
+.availability-bar li:not(:first-child) {
+  margin-left: 0.6rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--border);
 }
 
 .availability-bar li strong {
@@ -394,8 +411,7 @@ a {
 }
 
 .availability-bar .permit-item {
-  border-color: color-mix(in srgb, var(--success) 45%, var(--border));
-  background: color-mix(in srgb, var(--success) 12%, var(--card));
+  font-weight: 600;
 }
 
 .availability-bar .dot {
@@ -858,13 +874,14 @@ a {
     gap: 0.75rem;
   }
 
-  .theme-switcher,
-  .lang-switcher {
-    width: 100%;
+  .nav-controls {
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
   }
 
-  .theme-switcher {
-    flex-wrap: wrap;
+  .theme-select {
+    flex: 1;
   }
 }
 
