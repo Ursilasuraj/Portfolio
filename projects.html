@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Ursila Pradeep Vadakkumpuram</title>
+    <meta
+      name="description"
+      content="Project work from 42 Heilbronn's C curriculum, a BE final-year secure-banking prototype, and an MBA retail analytics project."
+    />
+    <link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/projects.html" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects | Ursila Pradeep Vadakkumpuram" />
+    <meta property="og:description" content="Project work from 42 Heilbronn, a secure-banking prototype, and a retail analytics project." />
+    <meta property="og:image" content="https://ursilasuraj.github.io/Portfolio/assets/og-image.png" />
+    <meta property="og:url" content="https://ursilasuraj.github.io/Portfolio/projects.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme =
+          saved ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('portfolio-lang') || (navigator.language || '').slice(0, 2);
+        if (lang === 'de') document.documentElement.setAttribute('lang', 'de');
+      })();
+    </script>
+  </head>
+  <body data-page="projects">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="hero hero-small">
+      <nav class="nav container">
+        <a class="brand" href="index.html">
+          <img src="assets/brand-mark.svg" alt="" width="44" height="44" />
+          <span>Ursila</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="nav-actions" id="nav-actions">
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+            <button class="theme-btn active" role="radio" aria-checked="true" data-theme-option="dark">Dark</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="pastel">Pastel Green</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="Light Blue">Light Blue</button>
+          </div>
+          <div class="lang-switcher" role="radiogroup" aria-label="Language / Sprache">
+            <button class="lang-btn active" role="radio" aria-checked="true" data-lang-option="en">EN</button>
+            <button class="lang-btn" role="radio" aria-checked="false" data-lang-option="de">DE</button>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            <a href="experience.html" data-i18n="nav.experience">Experience</a>
+            <a href="education.html" data-i18n="nav.education">Education</a>
+            <a href="skills.html" data-i18n="nav.skills">Skills</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container hero-small-copy">
+        <p class="eyebrow" data-i18n="projects.eyebrow">Projects</p>
+        <h1 data-i18n="projects.title">Requirements in, working systems out.</h1>
+        <p class="lead" data-i18n="projects.lead">
+          Two applied projects from before 42, and the systems-programming curriculum I'm working through now.
+        </p>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section section-light">
+        <div class="container">
+          <p class="eyebrow" data-i18n="projects.applied.eyebrow">Applied Projects</p>
+          <h2 data-i18n="projects.applied.title">Before 42: turning requirements into systems.</h2>
+          <div class="project-grid">
+            <article class="card project-card">
+              <div class="project-card-head">
+                <h3 data-i18n="projects.atm.title">Secure ATM Access — Biometrics &amp; OTP</h3>
+                <span class="status-badge status-done" data-i18n="status.done">Done</span>
+              </div>
+              <p class="meta">Nov 2014 – Apr 2015 · BE final-year project</p>
+              <p data-i18n="projects.atm.body">
+                A prototype for secure bank transactions combining biometric authentication with card-reader
+                input. I designed and built the MySQL-backed database with full CRUD functionality, applied
+                object-oriented principles throughout the system design, and focused specifically on reliability:
+                validation logic, structured error handling, and a full pass of user-acceptance testing rather
+                than just a working demo.
+              </p>
+              <ul class="tag-list">
+                <li>MySQL</li>
+                <li>Linux</li>
+                <li>OOP design</li>
+                <li>CRUD</li>
+                <li>UAT</li>
+              </ul>
+            </article>
+            <article class="card project-card">
+              <div class="project-card-head">
+                <h3 data-i18n="projects.retail.title">Retail &amp; E-Commerce Assortment Analytics</h3>
+                <span class="status-badge status-done" data-i18n="status.done">Done</span>
+              </div>
+              <p class="meta">Jan 2018 – May 2018 · MBA field project, Bangalore</p>
+              <p data-i18n="projects.retail.body">
+                Ran structured customer surveys across small retail outlets and e-commerce sellers in the
+                Bangalore area, cleaned the resulting data for inconsistencies, and built Excel dashboards that
+                surfaced purchasing trends. The output was a set of concrete, data-backed recommendations for
+                assortment and purchasing decisions — not just a report nobody acted on.
+              </p>
+              <ul class="tag-list">
+                <li>Excel dashboards</li>
+                <li>Survey design</li>
+                <li>Data cleaning</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow" data-i18n="projects.core.eyebrow">42 Heilbronn — Common Core</p>
+          <h2 data-i18n="projects.core.title">Full-time, project-based systems programming.</h2>
+          <p class="lead" data-i18n="projects.core.lead">
+            42 runs on peer-reviewed projects instead of lectures: every exercise below is built alone or in a
+            pair, defended in person against another student, and re-done if the defense fails. No course
+            material, no professor walking through the syntax first.
+          </p>
+          <p class="section-link-row">
+            <a class="btn btn-secondary" href="https://github.com/Ursilasuraj" target="_blank" rel="noopener" data-i18n="projects.core.githubCta">
+              See live progress on GitHub →
+            </a>
+          </p>
+
+          <div class="project-note">
+            <strong data-i18n="projects.core.noteLabel">A note on status:</strong>
+            <span data-i18n="projects.core.noteBody">
+              I'm currently working through this list. Rather than guess which of these are finished, every card
+              below is marked "to confirm" until I've personally checked it off and linked the repo — this page
+              updates as that happens, not before.
+            </span>
+          </div>
+
+          <div class="project-grid" style="margin-top: 1.75rem;">
+            <!-- 42 common-core cards. Each data-status="unconfirmed" until Ursila confirms completion + repo URL.
+                 See CONTENT-TODO.md item 1 — do not mark any of these "done" without her sign-off. -->
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>libft</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.libft">Recreate core C standard library functions from scratch, building a personal utility library used in every later project.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>ft_printf</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.ftprintf">Reimplement printf's formatted output and variadic argument handling.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>get_next_line</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.gnl">Read a file line by line with a static-buffer approach, independent of file size.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>born2beroot</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.born2beroot">Set up and harden a virtual machine: disk partitioning, firewall rules, password policy, monitoring.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>push_swap</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.pushswap">Sort a stack in the fewest possible moves using two stacks and a constrained instruction set.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>minitalk</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.minitalk">Client/server communication using only UNIX signals — no sockets, no files.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>pipex</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.pipex">Reimplement shell piping between two commands using fork, pipe, and exec.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>so_long</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.solong">A small 2D game: sprites, movement, and collision using the MiniLibX graphics library.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>philosophers</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.philosophers">The dining-philosophers problem — threads, mutexes, and race-condition-free synchronization.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>minishell</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.minishell">A working UNIX shell: parsing, pipes, redirections, built-ins, and signal handling.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>cub3D</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.cub3d">A raycasting engine inspired by Wolfenstein 3D, built on MiniLibX.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>NetPractice</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.netpractice">Diagnose and fix small IP subnetting configurations.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>CPP Modules</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.cppmodules">Nine modules bridging C to modern C++: OOP, inheritance, polymorphism, templates, the STL.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>webserv</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.webserv">An HTTP server built from scratch in C++, handling real browser requests.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>ft_irc</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.ftirc">An IRC server implementing the real protocol, compatible with standard IRC clients.</p>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
+              <div class="project-card-head">
+                <h3>inception</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              </div>
+              <p data-i18n="projects.core.inception">A small infrastructure stack in Docker: NGINX, WordPress, and MariaDB in separate containers.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="education.html" data-i18n="nav.education">Education</a></li>
+          <li><a href="skills.html" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <a class="footer-cta" href="mailto:ursilasuraj@gmail.com">ursilasuraj@gmail.com</a>
+      </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>

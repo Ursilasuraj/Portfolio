@@ -3,54 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skills | Ursila</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <title>Skills | Ursila Pradeep Vadakkumpuram</title>
+    <meta
+      name="description"
+      content="Technical skills: C, C++, Python, SQL, MySQL, Tableau, Power BI, Git — plus project management and process-improvement skills from an MBA in Supply Chain Management."
     />
+    <link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/skills.html" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Skills | Ursila Pradeep Vadakkumpuram" />
+    <meta property="og:description" content="C, C++, Python, SQL, MySQL, Tableau, Power BI, Git — plus project management and process improvement." />
+    <meta property="og:image" content="https://ursilasuraj.github.io/Portfolio/assets/og-image.png" />
+    <meta property="og:url" content="https://ursilasuraj.github.io/Portfolio/skills.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme =
+          saved ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('portfolio-lang') || (navigator.language || '').slice(0, 2);
+        if (lang === 'de') document.documentElement.setAttribute('lang', 'de');
+      })();
+    </script>
   </head>
-  <body data-theme="dark">
+  <body data-page="skills">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
     <header class="hero hero-small">
       <nav class="nav container">
         <a class="brand" href="index.html">
-          <img src="assets/brand-mark.svg" alt="Ursila logo" />
+          <img src="assets/brand-mark.svg" alt="" width="44" height="44" />
           <span>Ursila</span>
         </a>
-        <div class="nav-actions">
-          <div class="theme-switcher" role="group" aria-label="Theme selector">
-            <button class="theme-btn active" data-theme-option="dark">Dark</button>
-            <button class="theme-btn" data-theme-option="pastel">Pastel Green</button>
-            <button class="theme-btn" data-theme-option="Light Blue">Light Blue</button>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="nav-actions" id="nav-actions">
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+            <button class="theme-btn active" role="radio" aria-checked="true" data-theme-option="dark">Dark</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="pastel">Pastel Green</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="Light Blue">Light Blue</button>
+          </div>
+          <div class="lang-switcher" role="radiogroup" aria-label="Language / Sprache">
+            <button class="lang-btn active" role="radio" aria-checked="true" data-lang-option="en">EN</button>
+            <button class="lang-btn" role="radio" aria-checked="false" data-lang-option="de">DE</button>
           </div>
           <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="education.html">Education</a>
-            <a href="experience.html">Experience</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            <a href="experience.html" data-i18n="nav.experience">Experience</a>
+            <a href="education.html" data-i18n="nav.education">Education</a>
+            <a href="skills.html" data-i18n="nav.skills">Skills</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
       </nav>
 
       <div class="container hero-small-copy">
-        <p class="eyebrow">Core Strengths</p>
-        <h1>Where creativity meets precision and practical impact.</h1>
-        <p class="lead">
-          I bring together software craftsmanship, analytical thinking, and operational clarity
-          to build solutions that are both intelligent and dependable.
+        <p class="eyebrow" data-i18n="skills.eyebrow">Skills</p>
+        <h1 data-i18n="skills.title">Where creativity meets precision and practical impact.</h1>
+        <p class="lead" data-i18n="skills.lead">
+          Grouped by how I actually use each one — not a flat wall of logos.
         </p>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="section section-light">
         <div class="container">
+          <h2 data-i18n="skills.technical.title">Technical</h2>
           <div class="cards-grid skill-grid">
             <article class="card">
-              <h3>Programming</h3>
+              <h3 data-i18n="skills.card1.title">Programming Languages</h3>
               <ul>
                 <li>C</li>
                 <li>C++</li>
@@ -59,30 +93,28 @@
               </ul>
             </article>
             <article class="card">
-              <h3>Development Tools</h3>
+              <h3 data-i18n="skills.card2.title">Development Tools</h3>
               <ul>
-                <li>VS Code</li>
-                <li>JetBrains IDEs</li>
                 <li>Git</li>
-                <li>Debugging & Testing</li>
+                <li>VS Code</li>
+                <li>Visual Studio 2022</li>
+                <li>JetBrains IDEs</li>
               </ul>
             </article>
             <article class="card">
-              <h3>Data & Analytics</h3>
+              <h3 data-i18n="skills.card3.title">Data &amp; Analytics</h3>
               <ul>
-                <li>Tableau</li>
-                <li>Power BI</li>
+                <li>MySQL · SQL Server · SQLite</li>
+                <li>Tableau · Power BI</li>
                 <li>MS Excel</li>
-                <li>MySQL & SQL Server</li>
+                <li data-i18n="skills.card3.item4">Looker Studio (formerly Google Data Studio)</li>
               </ul>
             </article>
             <article class="card">
-              <h3>Business & Operations</h3>
+              <h3 data-i18n="skills.card4.title">Operating Systems</h3>
               <ul>
-                <li>Project Planning</li>
-                <li>Agile & Scrum</li>
-                <li>Process Improvement</li>
-                <li>Supply Chain Thinking</li>
+                <li>Windows · macOS</li>
+                <li>Linux — Debian, Ubuntu, CentOS</li>
               </ul>
             </article>
           </div>
@@ -90,21 +122,44 @@
       </section>
 
       <section class="section">
+        <div class="container">
+          <h2 data-i18n="skills.management.title">Management &amp; Operations</h2>
+          <div class="cards-grid skill-grid">
+            <article class="card">
+              <h3 data-i18n="skills.card5.title">Project Management</h3>
+              <ul>
+                <li data-i18n="skills.card5.item1">Agile &amp; Scrum methodologies</li>
+                <li data-i18n="skills.card5.item2">Risk management</li>
+                <li data-i18n="skills.card5.item3">Project planning &amp; scheduling</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3 data-i18n="skills.card6.title">Operations &amp; Process</h3>
+              <ul>
+                <li data-i18n="skills.card6.item1">Supply chain management</li>
+                <li data-i18n="skills.card6.item2">Six Sigma methodologies</li>
+                <li data-i18n="skills.card6.item3">Workflow automation &amp; performance metrics</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
         <div class="container two-col">
           <div>
-            <p class="eyebrow">Personal Strengths</p>
-            <h2>Strong analytical thinking, calm execution, and collaborative energy.</h2>
-            <p>
-              I am known for combining sharp problem-solving with clear communication,
-              making it easier for teams to move from idea to implementation without losing
-              sight of quality.
+            <p class="eyebrow" data-i18n="skills.personal.eyebrow">Personal Strengths</p>
+            <h2 data-i18n="skills.personal.title">Strong analytical thinking, calm execution, and collaborative energy.</h2>
+            <p data-i18n="skills.personal.body">
+              I combine sharp problem-solving with clear communication, which makes it easier for teams to move
+              from idea to implementation without losing sight of quality.
             </p>
           </div>
           <div class="hobby-list">
-            <span>Analytical</span>
-            <span>Decisive</span>
-            <span>Communicative</span>
-            <span>Team-oriented</span>
+            <span data-i18n="skills.pill1">Analytical</span>
+            <span data-i18n="skills.pill2">Decisive</span>
+            <span data-i18n="skills.pill3">Communicative</span>
+            <span data-i18n="skills.pill4">Team-oriented</span>
           </div>
         </div>
       </section>
@@ -112,11 +167,18 @@
 
     <footer class="footer">
       <div class="container footer-content">
-        <p>Built with elegance, clarity, and a touch of bold personality.</p>
-        <a href="index.html">Back to Home</a>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="education.html" data-i18n="nav.education">Education</a></li>
+        </ul>
+        <a class="footer-cta" href="contact.html" data-i18n="footer.contactCta">Get in touch →</a>
       </div>
     </footer>
 
-    <script src="theme.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

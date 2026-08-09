@@ -3,175 +3,403 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ursila | Software Developer & Data Consultant</title>
+    <title>Ursila Pradeep Vadakkumpuram | Software Developer — 42 Heilbronn</title>
     <meta
       name="description"
-      content="A classy portfolio website showcasing software development, data consulting, training, education, projects, and creative interests."
+      content="Software developer with a CS degree and an MBA in Supply Chain Management, currently at 42 Heilbronn. Unrestricted right to work in Germany — no sponsorship required."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ursila Pradeep Vadakkumpuram" />
+    <meta property="og:title" content="Ursila Pradeep Vadakkumpuram | Software Developer — 42 Heilbronn" />
+    <meta
+      property="og:description"
+      content="CS degree + MBA in Supply Chain Management, now writing C at 42 Heilbronn. Unrestricted right to work in Germany."
     />
+    <meta property="og:image" content="https://ursilasuraj.github.io/Portfolio/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ursilasuraj.github.io/Portfolio/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ursila Pradeep Vadakkumpuram | Software Developer" />
+    <meta name="twitter:image" content="https://ursilasuraj.github.io/Portfolio/assets/og-image.png" />
+
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      // Sets the theme before first paint so a returning visitor never sees a dark flash
+      // before their saved theme swaps in. See js/theme.js for the rest of the logic.
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme =
+          saved ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('portfolio-lang') || (navigator.language || '').slice(0, 2);
+        if (lang === 'de') document.documentElement.setAttribute('lang', 'de');
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ursila Pradeep Vadakkumpuram",
+        "url": "https://ursilasuraj.github.io/Portfolio/",
+        "jobTitle": "Software Developer",
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "42 Heilbronn" },
+          { "@type": "CollegeOrUniversity", "name": "University of Mysore" },
+          { "@type": "CollegeOrUniversity", "name": "Anna University" }
+        ],
+        "knowsLanguage": ["English", "German", "Malayalam"],
+        "sameAs": ["https://www.linkedin.com/in/ursilapradeep/", "https://github.com/Ursilasuraj"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Waiblingen", "addressCountry": "DE" }
+      }
+    </script>
   </head>
-  <body data-theme="dark">
+  <body data-page="home">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
     <header class="hero">
       <nav class="nav container">
         <a class="brand" href="index.html">
-          <img src="assets/brand-mark.svg" alt="Ursila logo" />
+          <img src="assets/brand-mark.svg" alt="" width="44" height="44" />
           <span>Ursila</span>
         </a>
-        <div class="nav-actions">
-          <div class="theme-switcher" role="group" aria-label="Theme selector">
-            <button class="theme-btn active" data-theme-option="dark">Dark</button>
-            <button class="theme-btn" data-theme-option="pastel">Pastel Green</button>
-            <button class="theme-btn" data-theme-option="Light Blue">Light Blue</button>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="nav-actions" id="nav-actions">
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+            <button class="theme-btn active" role="radio" aria-checked="true" data-theme-option="dark">Dark</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="pastel">Pastel Green</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="Light Blue">Light Blue</button>
+          </div>
+          <div class="lang-switcher" role="radiogroup" aria-label="Language / Sprache">
+            <button class="lang-btn active" role="radio" aria-checked="true" data-lang-option="en">EN</button>
+            <button class="lang-btn" role="radio" aria-checked="false" data-lang-option="de">DE</button>
           </div>
           <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="education.html">Education</a>
-            <a href="experience.html">Experience</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            <a href="experience.html" data-i18n="nav.experience">Experience</a>
+            <a href="education.html" data-i18n="nav.education">Education</a>
+            <a href="skills.html" data-i18n="nav.skills">Skills</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
       </nav>
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Software Developer • Data Consultant • Lifelong Learner</p>
-          <h1>Turning complex problems into elegant, data-driven solutions.</h1>
-          <p class="lead">
-            I blend software engineering, business thinking, and analytical depth to create
-            practical tools that make operations smarter and more resilient.
+          <p class="eyebrow" data-i18n="home.hero.eyebrow">Software Developer · 42 Heilbronn</p>
+          <h1 data-i18n="home.hero.title">
+            Software developer who learned the problem before learning to code it.
+          </h1>
+          <p class="lead" data-i18n="home.hero.lead">
+            A Computer Science degree, an MBA in Supply Chain Management, and roles spanning operations
+            management and freelance data consulting from 2018 to 2025 — now writing C from scratch, full-time,
+            at 42 Heilbronn.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="experience.html">Explore Experience</a>
-            <a class="btn btn-secondary" href="education.html">View Education</a>
-            <a class="btn btn-primary" href="skills.html">Skills</a>
+            <a class="btn btn-primary" href="assets/cv/Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="home.hero.cta.cv">Download CV</span>
+            </a>
+            <a class="btn btn-secondary" href="projects.html" data-i18n="home.hero.cta.projects">View Projects</a>
+            <a class="btn btn-secondary" href="contact.html" data-i18n="home.hero.cta.contact">Contact Me</a>
           </div>
+
+          <ul class="availability-bar" aria-label="Availability and work authorization">
+            <li><strong data-i18n="home.hero.avail.locationLabel">Location</strong>&nbsp;Waiblingen · Stuttgart region</li>
+            <li class="permit-item">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-i18n="home.hero.avail.permit">Niederlassungserlaubnis — unrestricted right to work in Germany, no sponsorship required</span>
+            </li>
+            <li data-i18n="home.hero.avail.languages">English (fluent) · German (telc B1) · Malayalam (native)</li>
+          </ul>
         </div>
 
         <div class="hero-card">
-          <img src="images/Profile_pic.jpg" alt="Profile portrait of Ursila" />
+          <picture>
+            <source srcset="assets/photos/profile-400.webp 400w, assets/photos/profile.webp 800w" type="image/webp" sizes="(max-width: 860px) 60vw, 360px" />
+            <img
+              src="assets/photos/profile.jpg"
+              srcset="assets/photos/profile-400.jpg 400w, assets/photos/profile.jpg 800w"
+              sizes="(max-width: 860px) 60vw, 360px"
+              width="800"
+              height="800"
+              alt="Portrait of Ursila Pradeep Vadakkumpuram"
+            />
+          </picture>
           <div class="hero-card-content">
-            <h2>Profile Snapshot</h2>
-            <p>
-              Bachelor’s in Computer Science, currently advancing through a project-based
-              training path at 42 Heilbronn, with a strong foundation in C, SQL, and
-              structured software design.
+            <h2 data-i18n="home.hero.card.title">Profile Snapshot</h2>
+            <p data-i18n="home.hero.card.body">
+              B.E. in Computer Science, an MBA in Supply Chain Management, and hands-on experience across data
+              consulting and operations — now deep in low-level C at 42 Heilbronn.
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="main">
+      <section class="section" aria-label="At a glance">
+        <div class="container">
+          <ul class="stat-grid">
+            <li class="stat-tile">
+              <span class="stat-value">2</span>
+              <span class="stat-label" data-i18n="home.stats.degrees">Degrees — B.E. Computer Science · MBA Supply Chain Management</span>
+            </li>
+            <li class="stat-tile">
+              <span class="stat-value">2018–2025</span>
+              <span class="stat-label" data-i18n="home.stats.experience">Operations management, data consulting & freelance roles</span>
+            </li>
+            <li class="stat-tile">
+              <span class="stat-value">3</span>
+              <span class="stat-label" data-i18n="home.stats.languages">Languages — English · German · Malayalam</span>
+            </li>
+            <li class="stat-tile">
+              <span class="stat-value" data-i18n="home.stats.permitValue">Unrestricted</span>
+              <span class="stat-label" data-i18n="home.stats.permitLabel">Right to work in Germany — Niederlassungserlaubnis</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section id="about" class="section section-light">
         <div class="container two-col">
           <div>
-            <p class="eyebrow">About Me</p>
-            <h2>A thoughtful builder with a balance of technical clarity and business insight.</h2>
-            <p>
-              I enjoy transforming real-world problems into practical digital solutions.
-              My path has moved through software development, data analysis, operations,
-              and consulting, giving me a rare ability to connect technical execution with
-              strategic impact.
+            <p class="eyebrow" data-i18n="home.about.eyebrow">About Me</p>
+            <h2 data-i18n="home.about.title">
+              The MBA isn't a detour from the code — it's why I build the right thing.
+            </h2>
+            <p data-i18n="home.about.p1">
+              My path runs from a Computer Science bachelor's degree, through an MBA in Supply Chain Management,
+              into years of turning real operational problems — inefficient workflows, messy spreadsheets, unclear
+              reporting — into working software and data systems. That order matters: I learned to read a business
+              requirement before I learned to formalize one in code.
             </p>
-            <p>
-              Whether I’m writing clean C programs, shaping a database model, or building
-              a dashboard that reveals a business story, I focus on reliability, structure,
-              and meaningful outcomes.
+            <p data-i18n="home.about.p2">
+              At 42 Heilbronn I'm hardening the engineering fundamentals that side of my background never forced me
+              to build — memory management, structured C, debugging discipline, peer-reviewed code — full-time,
+              project by project, from the ground up.
             </p>
           </div>
           <div class="info-grid">
             <article class="mini-card">
-              <h3>Training</h3>
-              <p>42 Heilbronn • Project-based software development</p>
+              <h3 data-i18n="home.about.card1.title">Training</h3>
+              <p data-i18n="home.about.card1.body">42 Heilbronn · full-time since May 2025</p>
             </article>
             <article class="mini-card">
-              <h3>Education</h3>
-              <p>Bachelor of Engineering in Computer Science</p>
+              <h3 data-i18n="home.about.card2.title">Education</h3>
+              <p data-i18n="home.about.card2.body">B.E. Computer Science · MBA Supply Chain Management</p>
             </article>
             <article class="mini-card">
-              <h3>Languages</h3>
-              <p>English • German • Malayalam</p>
+              <h3 data-i18n="home.about.card3.title">Languages</h3>
+              <p data-i18n="home.about.card3.body">English · German · Malayalam</p>
             </article>
             <article class="mini-card">
-              <h3>Certifications</h3>
-              <p>Start Steps AI, Google Data Analytics, Python HackerRank</p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section id="projects" class="section">
-        <div class="container">
-          <p class="eyebrow">Featured Projects</p>
-          <h2>Selected work that combines strategy, engineering, and user impact.</h2>
-          <div class="cards-grid">
-            <article class="card project-card">
-              <h3>Retail & E-Commerce Services</h3>
-              <p class="meta">Jan 2018 – May 2018</p>
-              <p>Delivered data cleaning, survey analysis, and dashboard-backed recommendations for assortment optimization.</p>
-            </article>
-            <article class="card project-card">
-              <h3>Secure ATM Access with Biometrics & OTP</h3>
-              <p class="meta">Nov 2014 – Apr 2015</p>
-              <p>Built a prototype for secure banking transactions using biometric authentication, card readers, and a MySQL-backed system.</p>
+              <h3 data-i18n="home.about.card4.title">Certifications</h3>
+              <p data-i18n="home.about.card4.body">StartSteps AI · Google Data Analytics · HackerRank (Python) · telc Deutsch B1</p>
             </article>
           </div>
         </div>
       </section>
 
+      <section id="projects" class="section">
+        <div class="container">
+          <p class="eyebrow" data-i18n="home.projects.eyebrow">Featured Work</p>
+          <h2 data-i18n="home.projects.title">A look at how I turn requirements into working systems.</h2>
+          <div class="project-grid">
+            <article class="card project-card">
+              <div class="project-card-head">
+                <h3 data-i18n="home.projects.card1.title">Secure ATM Access — Biometrics &amp; OTP</h3>
+              </div>
+              <p class="meta">Nov 2014 – Apr 2015</p>
+              <p data-i18n="home.projects.card1.body">
+                Final-year systems project: a prototype for secure bank transactions combining biometric
+                authentication and card-reader input. Built the MySQL-backed CRUD layer, applied OOP principles to
+                the system design, and drove structured software testing plus user-acceptance testing, with a
+                deliberate focus on validation logic and error handling.
+              </p>
+              <ul class="tag-list">
+                <li>MySQL</li>
+                <li>Linux</li>
+                <li>OOP</li>
+                <li>UAT</li>
+              </ul>
+            </article>
+            <article class="card project-card">
+              <div class="project-card-head">
+                <h3 data-i18n="home.projects.card2.title">Retail &amp; E-Commerce Assortment Analytics</h3>
+              </div>
+              <p class="meta">Jan 2018 – May 2018</p>
+              <p data-i18n="home.projects.card2.body">
+                MBA field project in the Bangalore retail market: ran structured customer surveys, cleaned the
+                resulting data for inconsistencies, and built Excel dashboards that turned it into concrete,
+                data-backed recommendations for assortment and purchasing decisions.
+              </p>
+              <ul class="tag-list">
+                <li>Excel</li>
+                <li>Survey design</li>
+                <li>Data cleaning</li>
+              </ul>
+            </article>
+            <article class="card project-card is-unconfirmed">
+              <div class="project-card-head">
+                <h3 data-i18n="home.projects.card3.title">42 Heilbronn — Common Core</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.inProgress">In progress</span>
+              </div>
+              <p class="meta">May 2025 – present</p>
+              <p data-i18n="home.projects.card3.body">
+                Full-time, project-based systems programming in C: memory management, algorithms, and
+                peer-reviewed code, built from the ground up with no framework to lean on.
+              </p>
+              <div class="project-links">
+                <a href="projects.html" data-i18n="home.projects.card3.link">See the project list →</a>
+              </div>
+            </article>
+          </div>
+          <p class="section-link-row">
+            <a class="btn btn-secondary" href="projects.html" data-i18n="home.projects.viewAll">View all projects</a>
+          </p>
+        </div>
+      </section>
+
       <section class="section section-light">
         <div class="container">
-          <p class="eyebrow">Activities & Hobbies</p>
-          <h2>Moments that keep the mind curious and the spirit energized.</h2>
+          <p class="eyebrow" data-i18n="home.experience.eyebrow">Professional Experience</p>
+          <h2 data-i18n="home.experience.title">Experience that bridges strategy, operations, and technology.</h2>
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="timeline-meta">Jan 2021 – Mar 2025</div>
+              <h3 data-i18n="home.experience.card1.title">Freelance IT &amp; Data Consultant</h3>
+              <p data-i18n="home.experience.card1.body">
+                Remote, part-time. Applied data science techniques with MySQL, SQL Server, and SQLite for small
+                businesses, turning the results into Tableau and Looker Studio visualizations.
+              </p>
+            </article>
+            <article class="timeline-card">
+              <div class="timeline-meta">Jan 2019 – Dec 2020</div>
+              <h3 data-i18n="home.experience.card2.title">Operations Manager</h3>
+              <p data-i18n="home.experience.card2.body">
+                Family business, India. Analyzed operational workflows and built Excel- and database-based
+                tracking systems to replace ad-hoc reporting.
+              </p>
+            </article>
+            <article class="timeline-card">
+              <div class="timeline-meta">Jun 2018 – Dec 2018</div>
+              <h3 data-i18n="home.experience.card3.title">Management Trainee</h3>
+              <p data-i18n="home.experience.card3.body">
+                Pioneer Developers, Bangalore. Coordinated between sales and technical teams and ran
+                Excel-based sales analysis to track KPIs.
+              </p>
+            </article>
+          </div>
+          <p class="section-link-row">
+            <a class="btn btn-secondary" href="experience.html" data-i18n="home.experience.viewAll">See full experience</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow" data-i18n="home.skills.eyebrow">Skills</p>
+          <h2 data-i18n="home.skills.title">Grouped by how I actually use them, not a logo wall.</h2>
+          <div class="cards-grid skill-grid">
+            <article class="card">
+              <h3 data-i18n="home.skills.card1.title">Using now — 42 Heilbronn</h3>
+              <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Git &amp; peer review</li>
+                <li data-i18n="home.skills.card1.item4">Debugging &amp; testing</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3 data-i18n="home.skills.card2.title">Used professionally</h3>
+              <ul>
+                <li>Python · SQL</li>
+                <li>MySQL · SQL Server · SQLite</li>
+                <li>Tableau · Power BI · Excel</li>
+                <li>VS Code · JetBrains IDEs</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3 data-i18n="home.skills.card3.title">Management &amp; process</h3>
+              <ul>
+                <li data-i18n="home.skills.card3.item1">Agile &amp; Scrum, project planning</li>
+                <li data-i18n="home.skills.card3.item2">Supply chain management</li>
+                <li data-i18n="home.skills.card3.item3">Six Sigma, workflow automation</li>
+              </ul>
+            </article>
+          </div>
+          <p class="section-link-row">
+            <a class="btn btn-secondary" href="skills.html" data-i18n="home.skills.viewAll">See full skills</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <p class="eyebrow" data-i18n="home.hobbies.eyebrow">Outside of Work</p>
+          <h2 data-i18n="home.hobbies.title">A few things that keep the perspective wide.</h2>
           <div class="image-grid">
             <article class="image-card">
-              <img src="images/Hiking.heic" alt="Hiking in nature" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80';" />
+              <picture>
+                <source srcset="assets/photos/hiking-600.webp" type="image/webp" />
+                <img src="assets/photos/hiking-600.jpg" width="600" height="450" loading="lazy" alt="Ursila hiking a mountain trail, with a snow-capped peak in the background" />
+              </picture>
               <div class="image-card-content">
-                <h3>Hiking</h3>
-                <p>Finding calm and perspective on mountain trails.</p>
+                <h3 data-i18n="home.hobbies.card1.title">Hiking</h3>
+                <p data-i18n="home.hobbies.card1.body">Finding calm and perspective on mountain trails.</p>
               </div>
             </article>
             <article class="image-card">
-              <img src="images/Animal_lover.jpg" alt="Animal feeding and care" loading="lazy" />
+              <picture>
+                <source srcset="assets/photos/animals-600.webp" type="image/webp" />
+                <img src="assets/photos/animals-600.jpg" width="600" height="450" loading="lazy" alt="Ursila feeding deer at an animal park" />
+              </picture>
               <div class="image-card-content">
-                <h3>Animal Feeding</h3>
-                <p>Small acts of care that bring joy and warmth.</p>
+                <h3 data-i18n="home.hobbies.card2.title">Animal Encounters</h3>
+                <p data-i18n="home.hobbies.card2.body">Small acts of care that bring joy and warmth.</p>
               </div>
             </article>
             <article class="image-card">
-              <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=80" alt="Swimming in open water" loading="lazy" />
+              <picture>
+                <source srcset="assets/photos/travel-600.webp" type="image/webp" />
+                <img src="assets/photos/travel-600.jpg" width="600" height="450" loading="lazy" alt="Ursila standing above coastal cliffs overlooking the ocean" />
+              </picture>
               <div class="image-card-content">
-                <h3>Swimming</h3>
-                <p>Energy, rhythm, and a refreshing sense of freedom.</p>
+                <h3 data-i18n="home.hobbies.card3.title">Travel</h3>
+                <p data-i18n="home.hobbies.card3.body">Collecting views, stories, and fresh perspectives.</p>
               </div>
             </article>
-            <article class="image-card">
-              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80" alt="Painting and creativity" loading="lazy" />
-              <div class="image-card-content">
-                <h3>Painting</h3>
-                <p>A little enhancement in creativity</p>
-              </div>
-            </article>
-            <article class="image-card">
-              <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80" alt="Reading books" loading="lazy" />
-              <div class="image-card-content">
-                <h3>Reading Books</h3>
-                <p>Learning, reflecting, and wandering through new worlds.</p>
-              </div>
-            </article>
-            <article class="image-card">
-              <img src="images/Travel2.jpg" alt="Travel and discovery" loading="lazy" />
-              <div class="image-card-content">
-                <h3>Travel</h3>
-                <p>Collecting views, stories, and fresh perspectives.</p>
-              </div>
-            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Contact">
+        <div class="container">
+          <div class="card" style="padding: 2.25rem 2rem; text-align: center;">
+            <p class="eyebrow" data-i18n="home.cta.eyebrow">Let's Talk</p>
+            <h2 data-i18n="home.cta.title" style="margin-bottom: 0.5rem;">Open to Software Developer roles in Germany.</h2>
+            <p class="lead" data-i18n="home.cta.body" style="margin: 0 auto 1.5rem;">
+              No sponsorship required, no work-permit paperwork — I can start the process as soon as we agree on
+              fit.
+            </p>
+            <a class="btn btn-primary" href="contact.html" data-i18n="home.cta.button">Get in touch</a>
           </div>
         </div>
       </section>
@@ -179,11 +407,19 @@
 
     <footer class="footer">
       <div class="container footer-content">
-        <p>Designed to feel polished, modern, and personal.</p>
-        <a href="skills.html">Explore Skills</a>
+        <ul class="footer-links">
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="education.html" data-i18n="nav.education">Education</a></li>
+          <li><a href="skills.html" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <a class="footer-cta" href="mailto:ursilasuraj@gmail.com">ursilasuraj@gmail.com</a>
       </div>
     </footer>
 
-    <script src="theme.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

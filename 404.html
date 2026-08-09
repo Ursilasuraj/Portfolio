@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found | Ursila Pradeep Vadakkumpuram</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme =
+          saved ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body data-page="404">
+    <header class="hero hero-small">
+      <nav class="nav container">
+        <a class="brand" href="index.html">
+          <img src="assets/brand-mark.svg" alt="" width="44" height="44" />
+          <span>Ursila</span>
+        </a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <p class="eyebrow">404</p>
+          <h1>This page took a wrong turn somewhere.</h1>
+          <p class="lead" style="margin: 0 auto 1.5rem;">The page you're looking for doesn't exist — but the rest of the site does.</p>
+          <a class="btn btn-primary" href="index.html">Back to home</a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-content">
+        <p style="margin:0;">Ursila Pradeep Vadakkumpuram</p>
+        <a class="footer-cta" href="contact.html">Get in touch →</a>
+      </div>
+    </footer>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

@@ -3,70 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education | Ursila</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <title>Education | Ursila Pradeep Vadakkumpuram</title>
+    <meta
+      name="description"
+      content="Education and training: 42 Heilbronn, an MBA in Supply Chain Management from the University of Mysore, and a B.E. in Computer Science from Anna University."
     />
+    <link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/education.html" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Education | Ursila Pradeep Vadakkumpuram" />
+    <meta property="og:description" content="42 Heilbronn, an MBA in Supply Chain Management, and a B.E. in Computer Science." />
+    <meta property="og:image" content="https://ursilasuraj.github.io/Portfolio/assets/og-image.png" />
+    <meta property="og:url" content="https://ursilasuraj.github.io/Portfolio/education.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme =
+          saved ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('portfolio-lang') || (navigator.language || '').slice(0, 2);
+        if (lang === 'de') document.documentElement.setAttribute('lang', 'de');
+      })();
+    </script>
   </head>
-  <body data-theme="dark">
+  <body data-page="education">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
     <header class="hero hero-small">
       <nav class="nav container">
         <a class="brand" href="index.html">
-          <img src="assets/brand-mark.svg" alt="Ursila logo" />
+          <img src="assets/brand-mark.svg" alt="" width="44" height="44" />
           <span>Ursila</span>
         </a>
-        <div class="nav-actions">
-          <div class="theme-switcher" role="group" aria-label="Theme selector">
-            <button class="theme-btn active" data-theme-option="dark">Dark</button>
-            <button class="theme-btn" data-theme-option="pastel">Pastel Green</button>
-            <button class="theme-btn" data-theme-option="Light Blue">Light Blue</button>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-actions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="nav-actions" id="nav-actions">
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+            <button class="theme-btn active" role="radio" aria-checked="true" data-theme-option="dark">Dark</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="pastel">Pastel Green</button>
+            <button class="theme-btn" role="radio" aria-checked="false" data-theme-option="Light Blue">Light Blue</button>
+          </div>
+          <div class="lang-switcher" role="radiogroup" aria-label="Language / Sprache">
+            <button class="lang-btn active" role="radio" aria-checked="true" data-lang-option="en">EN</button>
+            <button class="lang-btn" role="radio" aria-checked="false" data-lang-option="de">DE</button>
           </div>
           <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="education.html">Education</a>
-            <a href="experience.html">Experience</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            <a href="experience.html" data-i18n="nav.experience">Experience</a>
+            <a href="education.html" data-i18n="nav.education">Education</a>
+            <a href="skills.html" data-i18n="nav.skills">Skills</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
       </nav>
 
       <div class="container hero-small-copy">
-        <p class="eyebrow">Education</p>
-        <h1>Every milestone added depth, discipline, and a wider lens.</h1>
-        <p class="lead">
-          My academic journey has shaped how I think about systems, strategy, and thoughtful problem solving.
+        <p class="eyebrow" data-i18n="education.eyebrow">Education</p>
+        <h1 data-i18n="education.title">Every milestone added depth, discipline, and a wider lens.</h1>
+        <p class="lead" data-i18n="education.lead">
+          A computer science foundation, an MBA that added the business lens, and now 42 Heilbronn to rebuild the
+          engineering fundamentals from first principles.
         </p>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="section section-light">
         <div class="container">
+          <h2 class="visually-hidden" data-i18n="education.heading">Education timeline</h2>
           <div class="cards-grid">
             <article class="card">
-              <h3>42 Heilbronn</h3>
-              <p class="meta">May 2025 – Present</p>
-              <p>Full-time training in modular C programming, memory management, coding discipline, peer reviews, and structured debugging.</p>
+              <h3 data-i18n="education.card1.title">42 Heilbronn</h3>
+              <p class="meta">May 2025 – Present · Full-time</p>
+              <p data-i18n="education.card1.body">
+                Project-based, peer-reviewed training in C and C++, with a strong focus on memory management and
+                structured architecture. Working to strict coding standards, practicing debugging, testing, and
+                performance optimization on every project.
+              </p>
             </article>
             <article class="card">
-              <h3>MBA in Supply Chain Management</h3>
-              <p class="meta">Jun 2016 – May 2018</p>
-              <p>Focused on operations strategy, project management, and data-driven decision-making in complex business environments.</p>
+              <h3 data-i18n="education.card2.title">Master of Business Administration — Supply Chain Management</h3>
+              <p class="meta">Jun 2016 – May 2018 · University of Mysore · Grade A</p>
+              <p data-i18n="education.card2.body">
+                Key subjects: Operations Strategy and Management, Process and Project Management, and a
+                data-driven approach to decision-making.
+              </p>
             </article>
             <article class="card">
-              <h3>Bachelor of Engineering in Computer Science</h3>
-              <p class="meta">Aug 2011 – Jun 2015</p>
-              <p>Built a strong foundation in object-oriented programming, databases, C, C++, and software design principles.</p>
+              <h3 data-i18n="education.card3.title">Bachelor of Engineering — Computer Science</h3>
+              <p class="meta">Aug 2011 – Jun 2015 · Anna University · First Class</p>
+              <p data-i18n="education.card3.body">
+                Key subjects: Object-Oriented Programming, Database Management Systems, and Programming in C and
+                C++.
+              </p>
             </article>
             <article class="card">
-              <h3>Certifications</h3>
-              <p class="meta">2022 – 2023</p>
-              <p>Start Steps AI, Google Data Analytics, and HackerRank Python certification.</p>
+              <h3 data-i18n="education.card4.title">Certifications</h3>
+              <p class="meta">2021 – 2023</p>
+              <p data-i18n="education.card4.body">
+                StartSteps AI (2022) · Google Data Analytics (2023) · HackerRank, Python · telc Deutsch-Test für
+                Zuwanderer, result B1 (2021).
+              </p>
             </article>
           </div>
         </div>
@@ -75,11 +124,18 @@
 
     <footer class="footer">
       <div class="container footer-content">
-        <p>Built with elegance, clarity, and a touch of bold personality.</p>
-        <a href="index.html">Back to Home</a>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="skills.html" data-i18n="nav.skills">Skills</a></li>
+        </ul>
+        <a class="footer-cta" href="contact.html" data-i18n="footer.contactCta">Get in touch →</a>
       </div>
     </footer>
 
-    <script src="theme.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

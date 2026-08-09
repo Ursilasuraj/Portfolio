@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Ursila Pradeep Vadakkumpuram</title>
+<meta name="description" content="Curriculum Vitae — Ursila Pradeep Vadakkumpuram, Software Developer." />
+<link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/cv.html" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<style>
+  /* Deliberately separate from styles.css: this page is the source Chromium prints to PDF
+     (see tools/build-cv-pdf.mjs), so it needs a plain, high-contrast, ATS-friendly layout
+     rather than the site's dark glassmorphism theme. Real selectable text throughout —
+     no images of text, so applicant-tracking systems can parse it. */
+  :root {
+    --ink: #0f172a;
+    --muted: #475569;
+    --line: #cbd5e1;
+    --accent: #1d4ed8;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 12px; }
+  html, body { background: #e2e8f0; margin: 0; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.26;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 780px;
+    margin: 2rem auto;
+    background: var(--bg);
+    padding: 1.1cm 1.3cm;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.18);
+  }
+  header.cv-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    border-bottom: 2.5px solid var(--ink);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
+  }
+  header.cv-head h1 {
+    margin: 0 0 0.2rem;
+    font-size: 1.42rem;
+    letter-spacing: 0.02em;
+  }
+  .contact-line {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin: 0 0 0.1rem;
+  }
+  .contact-line a { color: var(--accent); text-decoration: underline; }
+  .permit-line {
+    margin: 0.3rem 0 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #065f46;
+  }
+  section { margin-bottom: 0.34rem; }
+  h2.cv-section {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.15rem;
+    margin: 0 0 0.32rem;
+  }
+  .profile-text { margin: 0; font-size: 0.84rem; }
+  .entry { margin-bottom: 0.24rem; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .entry-org {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0.02rem 0 0.12rem;
+  }
+  .entry-date { font-weight: 500; color: var(--muted); white-space: nowrap; font-size: 0.78rem; }
+  ul.cv-list { margin: 0.12rem 0 0; padding-left: 1.05rem; font-size: 0.8rem; }
+  ul.cv-list li { margin-bottom: 0.04rem; }
+  dl.skills-grid { margin: 0; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 1.5rem; font-size: 0.8rem; }
+  .skills-grid dt { font-weight: 700; margin: 0; }
+  .skills-grid dd { margin: 0 0 0.22rem; color: var(--muted); }
+  .lang-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; font-size: 0.8rem; }
+  .lang-grid strong { display: block; }
+  .lang-grid span { color: var(--muted); }
+  .cv-footer-note {
+    margin-top: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .screen-only { }
+  .print-actions { max-width: 800px; margin: 1rem auto 0; text-align: center; }
+  .print-actions a {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 0; max-width: none; }
+    .print-actions, .screen-only { display: none !important; }
+    @page { size: A4; margin: 0; }
+    body { padding: 0.9cm 1.1cm; }
+  }
+</style>
+</head>
+<body>
+  <div class="print-actions screen-only">
+    <a href="index.html">← Back to portfolio</a>
+    &nbsp;&nbsp;
+    <a href="cv-de.html">Deutsche Version →</a>
+  </div>
+
+  <div class="page">
+    <header class="cv-head">
+      <div>
+        <h1>URSILA PRADEEP VADAKKUMPURAM</h1>
+        <p class="contact-line">
+          Waiblingen, Germany (71336) · +49 163 5217298 ·
+          <a href="mailto:ursilasuraj@gmail.com">ursilasuraj@gmail.com</a>
+        </p>
+        <p class="contact-line">
+          <a href="https://www.linkedin.com/in/ursilapradeep/">linkedin.com/in/ursilapradeep</a> ·
+          <a href="https://github.com/Ursilasuraj">github.com/Ursilasuraj</a>
+        </p>
+        <p class="permit-line">Niederlassungserlaubnis — unrestricted right to work in Germany, no sponsorship required</p>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="cv-section">Profile</h2>
+      <p class="profile-text">
+        Software Developer with a Bachelor's degree in Computer Science and an MBA in Supply Chain Management.
+        Experienced in object-oriented programming, databases, and translating operational requirements into
+        structured software and data solutions. Currently advancing software engineering fundamentals full-time
+        through the project-based curriculum at 42 Heilbronn.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Education &amp; Training</h2>
+      <div class="entry">
+        <div class="entry-head"><span>42 Heilbronn School — Full-time</span><span class="entry-date">May 2025 – Present</span></div>
+        <ul class="cv-list">
+          <li>Developing modular programs in C and C++ with a strong focus on memory management and structured architecture</li>
+          <li>Building applications to strict coding standards under a peer-review process</li>
+          <li>Practicing debugging, testing, and performance optimization on every project</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><span>Master of Business Administration, Supply Chain Management</span><span class="entry-date">Jun 2016 – May 2018</span></div>
+        <p class="entry-org">University of Mysore · Grade A</p>
+        <ul class="cv-list">
+          <li>Key subjects: Operations Strategy and Management, Process and Project Management, Data-Driven Decision Making</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><span>Bachelor of Engineering, Computer Science</span><span class="entry-date">Aug 2011 – Jun 2015</span></div>
+        <p class="entry-org">Anna University · First Class</p>
+        <ul class="cv-list">
+          <li>Key subjects: Object-Oriented Programming, Database Management Systems, Programming in C and C++</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Professional Experience</h2>
+      <div class="entry">
+        <div class="entry-head"><span>Freelance IT &amp; Data Consultant</span><span class="entry-date">Jan 2021 – Mar 2025</span></div>
+        <p class="entry-org">Remote, Germany · Part-time</p>
+        <ul class="cv-list">
+          <li>Applied data science techniques with MySQL, SQL Server, and SQLite for small businesses and personal projects</li>
+          <li>Delivered actionable insights through Tableau and Looker Studio (formerly Google Data Studio) visualizations</li>
+          <li>Designed structured data models and optimized queries for reporting and analytics</li>
+          <li>Gathered requirements directly from stakeholders and converted them into functional software solutions</li>
+          <li>Conducted debugging, testing, and iterative improvements to ensure reliability and performance</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><span>Operations Manager</span><span class="entry-date">Jan 2019 – Dec 2020</span></div>
+        <p class="entry-org">Family Business, India</p>
+        <ul class="cv-list">
+          <li>Analyzed operational workflows and implemented structured process improvements</li>
+          <li>Designed data-driven tracking systems (Excel and database-based monitoring) to replace ad-hoc reporting</li>
+          <li>Worked cross-functionally to improve process stability and reporting accuracy</li>
+          <li>Supported digitalisation and workflow-automation initiatives across the business</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><span>Management Trainee</span><span class="entry-date">Jun 2018 – Dec 2018</span></div>
+        <p class="entry-org">Pioneer Developers, Bangalore, India</p>
+        <ul class="cv-list">
+          <li>Facilitated coordination between sales and technical teams to improve customer engagement</li>
+          <li>Performed data-driven sales analysis in Excel, tracking KPIs and supporting strategic decisions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Projects</h2>
+      <div class="entry">
+        <div class="entry-head"><span>Secure ATM Access with Biometrics and OTP</span><span class="entry-date">Nov 2014 – Apr 2015</span></div>
+        <p class="entry-org">BE final-year project</p>
+        <ul class="cv-list">
+          <li>Developed a prototype for secure bank transactions using biometric authentication and card readers</li>
+          <li>Built the backend database in MySQL with full CRUD functionality</li>
+          <li>Applied object-oriented programming principles in system design</li>
+          <li>Conducted structured software testing and user-acceptance testing</li>
+          <li>Focused on system reliability, validation logic, and error handling</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><span>Retail &amp; E-Commerce Assortment Analytics</span><span class="entry-date">Jan 2018 – May 2018</span></div>
+        <p class="entry-org">MBA project, Bangalore area</p>
+        <ul class="cv-list">
+          <li>Conducted structured customer surveys and cleaned data for inconsistencies</li>
+          <li>Provided data-driven recommendations to improve assortment and purchasing decisions</li>
+          <li>Developed Excel dashboards to identify trends and track business performance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Skills</h2>
+      <dl class="skills-grid">
+        <dt>Programming Languages</dt><dd>C, C++, Python, SQL</dd>
+        <dt>Development Tools</dt><dd>Git, VS Code, Visual Studio 2022, JetBrains IDEs</dd>
+        <dt>Data &amp; Analytics</dt><dd>MySQL, SQL Server, SQLite, Tableau, Power BI, MS Excel, Looker Studio</dd>
+        <dt>Operating Systems</dt><dd>Windows, macOS, Linux (Debian, Ubuntu, CentOS)</dd>
+        <dt>Project Management</dt><dd>Agile &amp; Scrum, risk management, project planning &amp; scheduling</dd>
+        <dt>Operations &amp; Process</dt><dd>Supply chain management, Six Sigma, workflow automation, performance metrics</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Languages</h2>
+      <div class="lang-grid">
+        <div><strong>English</strong><span>Fluent</span></div>
+        <div><strong>German</strong><span>telc B1 (2021); B2 self-assessed</span></div>
+        <div><strong>Malayalam</strong><span>Native</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Certifications</h2>
+      <p class="profile-text">
+        StartSteps AI (2022) · Google Data Analytics (2023) · HackerRank — Python ·
+        telc Deutsch-Test für Zuwanderer — Result B1 (exam 19.11.2021)
+      </p>
+    </section>
+
+    <section>
+      <h2 class="cv-section">Hobbies</h2>
+      <p class="profile-text">Hiking, painting, solving puzzles, travelling</p>
+    </section>
+  </div>
+  <p class="cv-footer-note screen-only">Generated from ursilasuraj.github.io/Portfolio — always the source of truth.</p>
+</body>
+</html>
