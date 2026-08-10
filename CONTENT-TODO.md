@@ -5,19 +5,17 @@ either a verified fact from your existing CVs/documents or a plainly factual dat
 list is every place I deliberately left a gap rather than guess, ranked by how much it would
 strengthen the site.
 
-## 1. Which 42 Heilbronn projects are actually done (highest impact)
+## 1. Which 42 Heilbronn projects are actually done
 
-`projects.html` lists the standard 42 common-core curriculum (libft, ft_printf, push_swap,
-minishell, philosophers, cub3D, etc.), but **every card is marked "To confirm"** — none are
-claimed as completed, because I don't know which you've actually finished. This is the single
-biggest content gap on the site: it's your strongest, most current proof of engineering
-ability, and right now it's a list of exercise descriptions with no results attached.
+**Updated 2026-08-10.** You confirmed 9 of 16: libft, ft_printf, get_next_line, born2beroot,
+push_swap, minitalk, pipex, so_long, and minishell are now marked "Done" on `projects.html`.
 
-To fix: tell me (or edit `projects.html` directly — each card is `data-status="unconfirmed"`)
-which projects are done, and I'll:
-- Switch the badge to "Done" (reuse `.status-badge.status-done`, same style as the two real
-  projects above it)
-- Add a link to the actual GitHub repo for each
+Still marked "To confirm" (data-status="unconfirmed"): philosophers, cub3D, NetPractice,
+CPP Modules, webserv, ft_irc, inception. Tell me as you finish each one and I'll flip its
+badge the same way.
+
+Also still open for every "Done" card: a link to the actual GitHub repo. I don't have your
+repo URLs — send them (or the naming pattern you use) and I'll add a link per card.
 - Add your grade/score or peer-evaluation result if you want it shown
 
 ## 2. Numbers

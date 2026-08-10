@@ -84,6 +84,8 @@
   "home.hobbies.card2.body": "Kleine Gesten der Fürsorge, die Freude bringen.",
   "home.hobbies.card3.title": "Reisen",
   "home.hobbies.card3.body": "Blicke, Geschichten und neue Perspektiven sammeln.",
+  "home.hobbies.card4.title": "Lesen",
+  "home.hobbies.card4.body": "Gerade lese ich Ikigai und Men Are From Mars, Women Are From Venus.",
 
   "home.cta.eyebrow": "Lass uns sprechen",
   "home.cta.title": "Offen für Software-Developer-Stellen in Deutschland.",
@@ -104,7 +106,7 @@
   "projects.core.lead": "42 funktioniert über Peer-Review-Projekte statt Vorlesungen: Jede Aufgabe wird allein oder zu zweit gebaut, persönlich vor einem anderen Studierenden verteidigt und bei nicht bestandener Verteidigung erneut bearbeitet. Kein Kursmaterial, kein Dozent, der vorher die Syntax erklärt.",
   "projects.core.githubCta": "Live-Fortschritt auf GitHub ansehen →",
   "projects.core.noteLabel": "Hinweis zum Status:",
-  "projects.core.noteBody": "Ich arbeite diese Liste gerade ab. Anstatt zu raten, welche Projekte fertig sind, ist jede Karte unten mit „noch zu bestätigen“ markiert, bis ich sie persönlich abgehakt und das Repository verlinkt habe — diese Seite wird aktualisiert, sobald das passiert, nicht vorher.",
+  "projects.core.noteBody": "Ich arbeite diese Liste bei 42 gerade ab — als „Abgeschlossen“ markierte Karten sind fertig und verteidigt, der Rest ist noch in Bearbeitung oder steht noch an. Nichts wird als abgeschlossen markiert, bevor ich es persönlich abgehakt habe.",
   "projects.core.libft": "Kernfunktionen der C-Standardbibliothek von Grund auf nachbauen — als persönliche Utility-Bibliothek für alle späteren Projekte.",
   "projects.core.ftprintf": "Die formatierte Ausgabe von printf und die Verarbeitung variabler Argumente neu implementieren.",
   "projects.core.gnl": "Eine Datei zeilenweise lesen, mit einem Static-Buffer-Ansatz, unabhängig von der Dateigröße.",

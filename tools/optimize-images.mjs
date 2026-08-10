@@ -2,6 +2,10 @@
 // Resizes and re-encodes source photos, stripping ALL metadata (including GPS EXIF).
 // Requires `sharp` — install locally with `npm install sharp` before running (sharp is not
 // committed to the repo; see package.json "optionalDependencies" / README for setup).
+//
+// Raw source photos aren't committed to the repo either (they're multi-MB phone originals —
+// see README "Regenerating assets"). Point SOURCE_DIR at a local folder containing them:
+//   SOURCE_DIR=/path/to/your/photos node tools/optimize-images.mjs
 import sharp from 'sharp';
 import { mkdirSync } from 'fs';
 import path from 'path';
@@ -9,16 +13,20 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const SRC = path.join(ROOT, 'images');
+const SRC = process.env.SOURCE_DIR || path.join(ROOT, 'images');
 const OUT = path.join(ROOT, 'assets', 'photos');
 
 mkdirSync(OUT, { recursive: true });
 
-// [sourceFile, outBaseName, {width, height, fit}]
+// [sourceFile, outBaseName, {width, height, fit, crop?}]
+// `crop` (left/top/width/height, in source pixels post-EXIF-rotation) takes an explicit
+// rectangle instead of letting sharp's saliency detector ('attention') guess one — needed for
+// hiking.heic and animal_lover.jpg, where auto-detection picked the mountain peak / her face
+// as the "most interesting" region and cropped the actual subject (her, the deer) out of frame.
 const jobs = [
   ['Profile_pic.jpg', 'profile', { width: 800, height: 800, fit: 'cover' }],
-  ['Hiking.heic', 'hiking', { width: 1000, height: 750, fit: 'cover' }],
-  ['Animal_lover.jpg', 'animals', { width: 1000, height: 750, fit: 'cover' }],
+  ['Hiking.heic', 'hiking', { width: 1000, height: 750, fit: 'cover', crop: { left: 0, top: 1483, width: 2252, height: 1689 } }],
+  ['Animal_lover.jpg', 'animals', { width: 1000, height: 750, fit: 'cover', crop: { left: 0, top: 1300, width: 1848, height: 1386 } }],
   ['Travel2.jpg', 'travel', { width: 1000, height: 750, fit: 'cover' }],
 ];
 
@@ -35,12 +43,13 @@ for (const [srcFile, base, opts] of jobs) {
   for (const v of variants) {
     const scale = v.w / opts.width;
     const h = Math.round(opts.height * scale);
-    const pipeline = () =>
-      sharp(srcPath, { failOn: 'none' })
-        .rotate() // apply EXIF orientation, then...
-        .resize({ width: v.w, height: h, fit: opts.fit, position: 'attention' });
+    const pipeline = () => {
+      let img = sharp(srcPath, { failOn: 'none' }).rotate(); // apply EXIF orientation, then...
+      if (opts.crop) img = img.extract(opts.crop);
+      return img.resize({ width: v.w, height: h, fit: opts.fit, position: 'attention' });
+    };
     // toBuffer() output from sharp carries NO metadata unless .withMetadata() is called,
-    // so this also strips all EXIF/GPS by default. rotate() bakes orientation in first.
+    // so this also strips all EXIF/GPS by default.
     const webpPath = path.join(OUT, `${base}${v.suffix}.webp`);
     const jpgPath = path.join(OUT, `${base}${v.suffix}.jpg`);
     const webpInfo = await pipeline().webp({ quality: 78 }).toFile(webpPath);
