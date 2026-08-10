@@ -5,14 +5,40 @@ either a verified fact from your existing CVs/documents or a plainly factual dat
 list is every place I deliberately left a gap rather than guess, ranked by how much it would
 strengthen the site.
 
-## 1. Which 42 Heilbronn projects are actually done
+## 1. 42 Heilbronn projects
 
-**Updated 2026-08-10.** You confirmed 9 of 16: libft, ft_printf, get_next_line, born2beroot,
-push_swap, minitalk, pipex, so_long, and minishell are now marked "Done" on `projects.html`.
+**Updated 2026-08-10.** You confirmed 9 of 16 done, and `projects.html` now shows *only* those
+9 (plus the 2 real pre-42 projects) — the unconfirmed ones are no longer displayed at all, per
+your request, so nothing incomplete is shown publicly.
 
-Still marked "To confirm" (data-status="unconfirmed"): philosophers, cub3D, NetPractice,
-CPP Modules, webserv, ft_irc, inception. Tell me as you finish each one and I'll flip its
-badge the same way.
+### 1a. Repo links — please check these
+
+I matched your GitHub account (github.com/Ursilasuraj, 18 public repos) against the 9 by name
+and added links for the 6 I was confident about. Please double-check these, especially the two
+with a name mismatch:
+
+| Project | Repo linked | Note |
+|---|---|---|
+| libft | `42_LIBFT` | |
+| ft_printf | `42_ft_printf` | |
+| push_swap | `push_swap` | exact match |
+| minishell | `minishell` | exact match |
+| so_long | `so_long_` | trailing underscore in the actual repo name |
+| pipex | `pipex_no_bonus` | **name suggests the bonus part isn't included** — let me know if that's right, or if there's a different repo for the full version |
+
+**No matching public repo found** for these 3 — not linked on the site:
+- get_next_line
+- born2beroot
+- minitalk
+
+These might be private repos (common for 42 students), under a different name, or just not
+pushed to GitHub. Send me the URLs if they exist and I'll add them.
+
+**Also worth asking:** your GitHub has a repo called `philosopher` (singular) and seven repos
+named `CPP_00` through `cpp_06`. Neither `philosophers` nor `CPP Modules` are in your confirmed
+list, so I have *not* marked them done or added them anywhere — I'm flagging this only because
+their existence might mean you've actually finished (or made real progress on) those too. Tell
+me if you want either added.
 
 Also still open for every "Done" card: a link to the actual GitHub repo. I don't have your
 repo URLs — send them (or the naming pattern you use) and I'll add a link per card.

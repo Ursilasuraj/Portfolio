@@ -9,7 +9,6 @@
 
   "status.done": "Abgeschlossen",
   "status.inProgress": "In Bearbeitung",
-  "status.toConfirm": "Noch zu bestätigen",
 
   "footer.contactCta": "Kontakt aufnehmen →",
 
@@ -106,7 +105,7 @@
   "projects.core.lead": "42 funktioniert über Peer-Review-Projekte statt Vorlesungen: Jede Aufgabe wird allein oder zu zweit gebaut, persönlich vor einem anderen Studierenden verteidigt und bei nicht bestandener Verteidigung erneut bearbeitet. Kein Kursmaterial, kein Dozent, der vorher die Syntax erklärt.",
   "projects.core.githubCta": "Live-Fortschritt auf GitHub ansehen →",
   "projects.core.noteLabel": "Hinweis zum Status:",
-  "projects.core.noteBody": "Ich arbeite diese Liste bei 42 gerade ab — als „Abgeschlossen“ markierte Karten sind fertig und verteidigt, der Rest ist noch in Bearbeitung oder steht noch an. Nichts wird als abgeschlossen markiert, bevor ich es persönlich abgehakt habe.",
+  "projects.core.noteBody": "Das sind die 42-Heilbronn-Projekte, die ich bisher abgeschlossen und verteidigt habe — nicht das komplette Curriculum. Weitere kommen hinzu, sobald ich sie fertigstelle und verteidige.",
   "projects.core.libft": "Kernfunktionen der C-Standardbibliothek von Grund auf nachbauen — als persönliche Utility-Bibliothek für alle späteren Projekte.",
   "projects.core.ftprintf": "Die formatierte Ausgabe von printf und die Verarbeitung variabler Argumente neu implementieren.",
   "projects.core.gnl": "Eine Datei zeilenweise lesen, mit einem Static-Buffer-Ansatz, unabhängig von der Dateigröße.",
@@ -115,14 +114,8 @@
   "projects.core.minitalk": "Client-Server-Kommunikation ausschließlich über UNIX-Signale — keine Sockets, keine Dateien.",
   "projects.core.pipex": "Shell-Piping zwischen zwei Befehlen mit fork, pipe und exec neu implementieren.",
   "projects.core.solong": "Ein kleines 2D-Spiel: Sprites, Bewegung und Kollisionen mit der Grafikbibliothek MiniLibX.",
-  "projects.core.philosophers": "Das Philosophenproblem — Threads, Mutexe und race-condition-freie Synchronisation.",
   "projects.core.minishell": "Eine funktionierende UNIX-Shell: Parsing, Pipes, Umleitungen, Built-ins und Signalbehandlung.",
-  "projects.core.cub3d": "Eine Raycasting-Engine im Stil von Wolfenstein 3D, aufgebaut auf MiniLibX.",
-  "projects.core.netpractice": "Kleine IP-Subnetting-Konfigurationen diagnostizieren und korrigieren.",
-  "projects.core.cppmodules": "Neun Module, die C mit modernem C++ verbinden: OOP, Vererbung, Polymorphie, Templates, die STL.",
-  "projects.core.webserv": "Ein von Grund auf in C++ gebauter HTTP-Server, der echte Browser-Anfragen verarbeitet.",
-  "projects.core.ftirc": "Ein IRC-Server, der das echte Protokoll implementiert und mit Standard-IRC-Clients funktioniert.",
-  "projects.core.inception": "Ein kleiner Infrastruktur-Stack in Docker: NGINX, WordPress und MariaDB in getrennten Containern.",
+  "projects.core.viewRepo": "Repo ansehen →",
 
   "experience.eyebrow": "Berufliche Erfahrung",
   "experience.title": "Erfahrung, die Strategie, Betrieb und Technologie verbindet.",

@@ -143,22 +143,27 @@
           <div class="project-note">
             <strong data-i18n="projects.core.noteLabel">A note on status:</strong>
             <span data-i18n="projects.core.noteBody">
-              I'm working through this list at 42 — cards marked "Done" are finished and defended; the rest are
-              still in progress or upcoming. Nothing is marked done until I've personally checked it off.
+              These are the 42 Heilbronn projects I've completed and defended so far — not the full curriculum.
+              More get added here as I finish and defend them.
             </span>
           </div>
 
           <div class="project-grid" style="margin-top: 1.75rem;">
-            <!-- 42 common-core cards. libft/ft_printf/get_next_line/born2beroot/push_swap/minitalk/pipex/
-                 so_long/minishell confirmed done by Ursila (2026-08-10). Remaining cards stay
-                 data-status="unconfirmed" until she confirms completion + repo URL — see CONTENT-TODO.md item 1.
-                 Do not mark any further card "done" without her explicit sign-off. -->
+            <!-- Only confirmed-done 42 projects are shown here (per Ursila's request). The remaining
+                 common-core projects (philosophers, cub3D, NetPractice, CPP Modules, webserv, ft_irc,
+                 inception) exist but are not yet confirmed done — see CONTENT-TODO.md item 1. Do not
+                 add a card for any of them without her explicit sign-off.
+                 Repo links: matched against github.com/Ursilasuraj by name (2026-08-10). get_next_line,
+                 born2beroot, and minitalk have no matching public repo — see CONTENT-TODO.md item 1a. -->
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
                 <h3>libft</h3>
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.libft">Recreate core C standard library functions from scratch, building a personal utility library used in every later project.</p>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/42_LIBFT" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
             </article>
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
@@ -166,6 +171,9 @@
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.ftprintf">Reimplement printf's formatted output and variadic argument handling.</p>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/42_ft_printf" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
             </article>
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
@@ -187,6 +195,9 @@
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.pushswap">Sort a stack in the fewest possible moves using two stacks and a constrained instruction set.</p>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/push_swap" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
             </article>
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
@@ -201,6 +212,9 @@
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.pipex">Reimplement shell piping between two commands using fork, pipe, and exec.</p>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/pipex_no_bonus" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
             </article>
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
@@ -208,13 +222,9 @@
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.solong">A small 2D game: sprites, movement, and collision using the MiniLibX graphics library.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>philosophers</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/so_long_" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
               </div>
-              <p data-i18n="projects.core.philosophers">The dining-philosophers problem — threads, mutexes, and race-condition-free synchronization.</p>
             </article>
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
@@ -222,48 +232,9 @@
                 <span class="status-badge status-done" data-i18n="status.done">Done</span>
               </div>
               <p data-i18n="projects.core.minishell">A working UNIX shell: parsing, pipes, redirections, built-ins, and signal handling.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>cub3D</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
+              <div class="project-links">
+                <a href="https://github.com/Ursilasuraj/minishell" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
               </div>
-              <p data-i18n="projects.core.cub3d">A raycasting engine inspired by Wolfenstein 3D, built on MiniLibX.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>NetPractice</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
-              </div>
-              <p data-i18n="projects.core.netpractice">Diagnose and fix small IP subnetting configurations.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>CPP Modules</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
-              </div>
-              <p data-i18n="projects.core.cppmodules">Nine modules bridging C to modern C++: OOP, inheritance, polymorphism, templates, the STL.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>webserv</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
-              </div>
-              <p data-i18n="projects.core.webserv">An HTTP server built from scratch in C++, handling real browser requests.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>ft_irc</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
-              </div>
-              <p data-i18n="projects.core.ftirc">An IRC server implementing the real protocol, compatible with standard IRC clients.</p>
-            </article>
-            <article class="card project-card is-unconfirmed" data-status="unconfirmed">
-              <div class="project-card-head">
-                <h3>inception</h3>
-                <span class="status-badge status-unconfirmed" data-i18n="status.toConfirm">To confirm</span>
-              </div>
-              <p data-i18n="projects.core.inception">A small infrastructure stack in Docker: NGINX, WordPress, and MariaDB in separate containers.</p>
             </article>
           </div>
         </div>
