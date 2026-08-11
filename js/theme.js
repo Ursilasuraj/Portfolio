@@ -1,4 +1,4 @@
-// Theme switcher (dark / pastel / light-blue), driven by a single <select>.
+// Theme switcher (dark / light), driven by a single <select>.
 //
 // The actual FOUC-prevention (setting data-theme before first paint) happens in a tiny
 // blocking inline <script> at the top of each page's <head> — see the "theme init" comment
