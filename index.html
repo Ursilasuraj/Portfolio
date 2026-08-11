@@ -9,7 +9,7 @@
       content="Software developer with a CS degree and an MBA in Supply Chain Management, currently at 42 Heilbronn. Unrestricted right to work in Germany — no sponsorship required."
     />
     <link rel="canonical" href="https://ursilasuraj.github.io/Portfolio/" />
-    <meta name="theme-color" content="#07111f" />
+    <meta name="theme-color" content="#1c140f" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="assets/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -40,7 +40,7 @@
         var saved = localStorage.getItem('portfolio-theme');
         var theme =
           saved ||
-          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light-blue' : 'dark');
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
         document.documentElement.setAttribute('data-theme', theme);
         var lang = localStorage.getItem('portfolio-lang') || (navigator.language || '').slice(0, 2);
         if (lang === 'de') document.documentElement.setAttribute('lang', 'de');
@@ -91,8 +91,7 @@
             <label class="visually-hidden" for="theme-select">Theme</label>
             <select id="theme-select" class="theme-select">
               <option value="dark">Dark</option>
-              <option value="pastel">Pastel Green</option>
-              <option value="light-blue">Light Blue</option>
+              <option value="light">Light</option>
             </select>
             <button type="button" class="lang-toggle" data-lang-current="en" aria-label="Switch to German">DE</button>
           </div>
