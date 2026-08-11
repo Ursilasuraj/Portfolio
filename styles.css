@@ -239,16 +239,34 @@ a {
   gap: 0.5rem;
 }
 
-.theme-select {
-  appearance: none;
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
   border: 1px solid var(--border);
   border-radius: 0.6rem;
-  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239fb0c8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 0.55rem center / 14px 14px;
+  background: var(--card);
   color: var(--text);
-  font: inherit;
-  font-size: 0.88rem;
-  padding: 0.5rem 1.75rem 0.5rem 0.75rem;
   cursor: pointer;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme='light'] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme='light'] .theme-toggle .icon-moon {
+  display: block;
 }
 
 .lang-toggle {
@@ -264,7 +282,7 @@ a {
   min-width: 2.6rem;
 }
 
-.theme-select:hover,
+.theme-toggle:hover,
 .lang-toggle:hover {
   border-color: var(--accent);
 }
@@ -953,9 +971,6 @@ a {
     border-top: 1px solid var(--border);
   }
 
-  .theme-select {
-    flex: 1;
-  }
 }
 
 @media (max-width: 600px) {
