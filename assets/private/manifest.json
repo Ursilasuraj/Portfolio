@@ -1,0 +1,44 @@
+{
+  "kdf": {
+    "iterations": 600000,
+    "hash": "SHA-256",
+    "saltBytes": 16,
+    "ivBytes": 12
+  },
+  "assets": {
+    "photo-profile": {
+      "file": "photo-profile.enc",
+      "type": "image/jpeg"
+    },
+    "photo-profile-400": {
+      "file": "photo-profile-400.enc",
+      "type": "image/jpeg"
+    },
+    "photo-hiking": {
+      "file": "photo-hiking.enc",
+      "type": "image/jpeg"
+    },
+    "photo-animals": {
+      "file": "photo-animals.enc",
+      "type": "image/jpeg"
+    },
+    "photo-travel": {
+      "file": "photo-travel.enc",
+      "type": "image/jpeg"
+    },
+    "photo-reading": {
+      "file": "photo-reading.enc",
+      "type": "image/jpeg"
+    },
+    "cv-en": {
+      "file": "cv-en.enc",
+      "type": "application/pdf",
+      "download": "Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf"
+    },
+    "cv-de": {
+      "file": "cv-de.enc",
+      "type": "application/pdf",
+      "download": "Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf"
+    }
+  }
+}

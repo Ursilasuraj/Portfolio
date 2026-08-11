@@ -12,6 +12,13 @@
 
   "footer.contactCta": "Kontakt aufnehmen →",
 
+  "unlock.prompt": "Fotos und Lebenslauf-Download sind privat. Bitte den Zugangsschlüssel eingeben.",
+  "unlock.promptCv": "Der Lebenslauf-Download ist privat. Bitte den Zugangsschlüssel eingeben.",
+  "unlock.button": "Persönliche Angaben anzeigen",
+  "unlock.label": "Zugangsschlüssel",
+  "unlock.submit": "Entsperren",
+  "unlock.cancel": "Abbrechen",
+
   "home.hero.eyebrow": "Softwareentwicklerin · 42 Heilbronn",
   "home.hero.title": "Softwareentwicklerin, die das Problem verstand, bevor sie es programmierte.",
   "home.hero.lead": "Ein Bachelor in Informatik, ein MBA in Supply Chain Management und berufliche Stationen im Operations Management sowie in der freiberuflichen Datenberatung von 2018 bis 2025 — jetzt schreibe ich Vollzeit C von Grund auf bei 42 Heilbronn.",

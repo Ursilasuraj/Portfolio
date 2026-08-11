@@ -40,6 +40,7 @@
   --focus-ring: #7dd3fc;
   --success: #34d399;
   --success-ink: #05261a;
+  --danger: #f87171;
 }
 
 :root[data-theme='pastel'] {
@@ -59,6 +60,7 @@
   --focus-ring: #2f5a3c;
   --success: #1f7a4d;
   --success-ink: #ffffff;
+  --danger: #991b1b;
 }
 
 :root[data-theme='light-blue'] {
@@ -78,6 +80,7 @@
   --focus-ring: #2563eb;
   --success: #0f766e;
   --success-ink: #ffffff;
+  --danger: #991b1b;
 }
 
 * {
@@ -555,6 +558,113 @@ a {
   width: 100%;
   height: 220px;
   object-fit: cover;
+}
+
+/* --- Private assets gate -------------------------------------------------
+   Photos and CV PDFs ship as AES-GCM ciphertext (tools/encrypt-assets.mjs) and are
+   swapped in as object URLs by js/unlock.js. Until then the <img> carries a blank
+   data-URI placeholder, so these rules give it a neutral surface at the right
+   aspect ratio — the layout is identical locked and unlocked, no shift on reveal. */
+.locked-media {
+  position: relative;
+  width: 100%;
+  background: var(--bg-soft);
+}
+
+.locked-media img[data-private-placeholder] {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-soft);
+}
+
+.hero-card .locked-media img[data-private-placeholder] {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.locked-media-note {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.locked-media-note svg {
+  width: 34px;
+  height: 34px;
+  opacity: 0.55;
+}
+
+/* Once unlocked the note is removed from the flow by JS clearing the placeholder attr */
+.locked-media img:not([data-private-placeholder]) ~ .locked-media-note {
+  display: none;
+}
+
+.unlock-gate {
+  margin: 1.25rem 0 1.75rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px dashed var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+  max-width: 640px;
+}
+
+.unlock-gate[hidden] {
+  display: none;
+}
+
+.unlock-gate-text {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* The form only appears after "Show personal details" is pressed */
+.unlock-form {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.unlock-gate[data-open] .unlock-form {
+  display: flex;
+}
+
+.unlock-gate[data-open] [data-unlock-open] {
+  display: none;
+}
+
+.unlock-input {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  min-width: 12rem;
+  flex: 1 1 12rem;
+}
+
+.unlock-status {
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  color: var(--muted);
+}
+
+.unlock-status[data-state='error'] {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* Locked CTAs stay visible but inert until a correct key enables them */
+.is-locked {
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .image-card-content {

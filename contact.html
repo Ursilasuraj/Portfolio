@@ -100,10 +100,26 @@
               <span>GitHub</span>
             </a>
 
-            <a class="social-link" href="assets/cv/Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf" aria-label="Download CV as PDF">
+            <a class="social-link is-locked" href="#" data-private="cv-en" aria-disabled="true" aria-label="Download CV as PDF">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span data-i18n="contact.cvLink">Download CV</span>
             </a>
+          </div>
+
+          <div class="unlock-gate" data-unlock-gate>
+            <p class="unlock-gate-text" data-i18n="unlock.promptCv">
+              The CV download is private. Enter the access key to enable it.
+            </p>
+            <button type="button" class="btn btn-secondary btn-sm" data-unlock-open data-i18n="unlock.button">
+              Show personal details
+            </button>
+            <form class="unlock-form" data-unlock-form>
+              <label class="visually-hidden" for="unlock-key" data-i18n="unlock.label">Access key</label>
+              <input type="password" id="unlock-key" class="unlock-input" data-unlock-input autocomplete="off" spellcheck="false" size="24" />
+              <button type="submit" class="btn btn-primary btn-sm" data-i18n="unlock.submit">Unlock</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-unlock-cancel data-i18n="unlock.cancel">Cancel</button>
+            </form>
+            <p class="unlock-status" data-unlock-status role="status" aria-live="polite"></p>
           </div>
 
           <p class="availability-bar" style="margin-top: 2rem;">
@@ -128,5 +144,6 @@
     <script src="js/theme.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/unlock.js"></script>
   </body>
 </html>

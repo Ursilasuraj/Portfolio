@@ -22,9 +22,12 @@ if (!executablePath) {
   process.exit(1);
 }
 
+// These live under tools/ rather than at the site root on purpose: they render the full CV
+// (name, city, email, full history), so publishing them would hand out the same content the
+// encrypted CV download is meant to gate. They are build inputs only, never served.
 const jobs = [
-  { src: 'cv.html', out: 'Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf' },
-  { src: 'cv-de.html', out: 'Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf' },
+  { src: 'tools/cv-source-en.html', out: 'Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf' },
+  { src: 'tools/cv-source-de.html', out: 'Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf' },
 ];
 
 const browser = await chromium.launch({ executablePath });

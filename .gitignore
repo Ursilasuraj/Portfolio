@@ -1,3 +1,10 @@
 node_modules/
 .DS_Store
 *.log
+
+# Plaintext private assets. These are the inputs to tools/encrypt-assets.mjs and
+# tools/build-cv-pdf.mjs — only the encrypted assets/private/*.enc versions belong in the
+# repo. Keeping these ignored means a local rebuild can't accidentally re-commit the
+# unencrypted photos or CV PDFs.
+assets/photos/
+assets/cv/
