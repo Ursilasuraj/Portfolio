@@ -111,7 +111,7 @@
             at 42 Heilbronn.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary is-locked" href="#" data-private="cv-en" aria-disabled="true">
+            <a class="btn btn-primary is-locked" href="#" data-private="asset-7" aria-disabled="true">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span data-i18n="home.hero.cta.cv">Download CV</span>
             </a>
@@ -130,20 +130,21 @@
         </div>
 
         <div class="hero-card">
-          <!-- Photo ships encrypted (assets/private/photo-profile.enc); js/unlock.js swaps in a
-               decrypted object URL once the correct key is entered. src is intentionally empty. -->
+          <!-- Photo ships encrypted (assets/private/, manifest key asset-1 — see
+               tools/encrypt-assets.mjs for the mapping); js/unlock.js swaps in a decrypted
+               object URL once the correct key is entered. src is intentionally empty, and so
+               is alt — the real description lives only in manifest.json (fetched solely on an
+               unlock attempt, never on page load), applied once decryption succeeds. -->
           <div class="locked-media" data-locked-ratio="1 / 1">
             <img
-              data-private="photo-profile"
+              data-private="asset-1"
               data-private-placeholder
+             
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
               width="800"
               height="800"
-              alt="Portrait of Ursila Pradeep Vadakkumpuram"
+              alt=""
             />
-            <span class="locked-media-note" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            </span>
           </div>
           <div class="hero-card-content">
             <h2 data-i18n="home.hero.card.title">Profile Snapshot</h2>
@@ -361,7 +362,7 @@
 
           <div class="unlock-gate" data-unlock-gate>
             <p class="unlock-gate-text" data-i18n="unlock.prompt">
-              Photos and CV download are private. Enter the access key to view them.
+              Some content on this page is private.
             </p>
             <button type="button" class="btn btn-secondary btn-sm" data-unlock-open data-i18n="unlock.button">
               Show personal details
@@ -386,8 +387,7 @@
           <div class="image-grid">
             <article class="image-card">
               <div class="locked-media" data-locked-ratio="4 / 3">
-                <img data-private="photo-hiking" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="Ursila hiking a mountain trail, with a snow-capped peak in the background" />
-                <span class="locked-media-note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <img data-private="asset-3" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="" />
               </div>
               <div class="image-card-content">
                 <h3 data-i18n="home.hobbies.card1.title">Hiking</h3>
@@ -396,8 +396,7 @@
             </article>
             <article class="image-card">
               <div class="locked-media" data-locked-ratio="4 / 3">
-                <img data-private="photo-animals" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="Ursila feeding deer at an animal park" />
-                <span class="locked-media-note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <img data-private="asset-4" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="" />
               </div>
               <div class="image-card-content">
                 <h3 data-i18n="home.hobbies.card2.title">Animal Encounters</h3>
@@ -406,8 +405,7 @@
             </article>
             <article class="image-card">
               <div class="locked-media" data-locked-ratio="4 / 3">
-                <img data-private="photo-travel" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="Ursila standing above coastal cliffs overlooking the ocean" />
-                <span class="locked-media-note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <img data-private="asset-5" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="" />
               </div>
               <div class="image-card-content">
                 <h3 data-i18n="home.hobbies.card3.title">Travel</h3>
@@ -416,8 +414,7 @@
             </article>
             <article class="image-card">
               <div class="locked-media" data-locked-ratio="4 / 3">
-                <img data-private="photo-reading" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="Illustrated cover art for two books: Ikigai, and Men Are From Mars, Women Are From Venus" />
-                <span class="locked-media-note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <img data-private="asset-6" data-private-placeholder src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3C/svg%3E" width="600" height="450" alt="" />
               </div>
               <div class="image-card-content">
                 <h3 data-i18n="home.hobbies.card4.title">Reading</h3>

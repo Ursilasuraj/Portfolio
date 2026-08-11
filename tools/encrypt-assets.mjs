@@ -33,20 +33,29 @@ if (!password) {
   process.exit(1);
 }
 
-// logical name → source file (relative to repo root) + MIME type the browser should get back
+// Logical name → source file (relative to repo root) + MIME type the browser should get back.
+// Keys are deliberately generic (asset-1, asset-2, ...) rather than "photo-hiking" etc. —
+// manifest.json is a plain fetchable file, and descriptive keys would tell a visitor exactly
+// what's hidden even though the content itself stays encrypted. See the comment above each
+// <img data-private="..."> in index.html for which asset-N is which.
+// `alt` is the real accessible description, restored on the <img> only after a successful
+// decrypt (see js/unlock.js). It deliberately lives here, not in index.html — manifest.json
+// is only fetched once someone actually opens the unlock form and submits a key (see
+// loadManifest() in js/unlock.js), never on a plain page load, so this keeps the description
+// out of View Source, the easiest way anyone would casually discover a photo exists.
 const assets = {
-  'photo-profile': { src: 'assets/photos/profile.jpg', type: 'image/jpeg' },
-  'photo-profile-400': { src: 'assets/photos/profile-400.jpg', type: 'image/jpeg' },
-  'photo-hiking': { src: 'assets/photos/hiking-600.jpg', type: 'image/jpeg' },
-  'photo-animals': { src: 'assets/photos/animals-600.jpg', type: 'image/jpeg' },
-  'photo-travel': { src: 'assets/photos/travel-600.jpg', type: 'image/jpeg' },
-  'photo-reading': { src: 'assets/photos/reading-600.jpg', type: 'image/jpeg' },
-  'cv-en': {
+  'asset-1': { src: 'assets/photos/profile.jpg', type: 'image/jpeg', alt: 'Portrait of Ursila Pradeep Vadakkumpuram' },
+  'asset-2': { src: 'assets/photos/profile-400.jpg', type: 'image/jpeg', alt: 'Portrait of Ursila Pradeep Vadakkumpuram' },
+  'asset-3': { src: 'assets/photos/hiking-600.jpg', type: 'image/jpeg', alt: 'Ursila hiking a mountain trail, with a snow-capped peak in the background' },
+  'asset-4': { src: 'assets/photos/animals-600.jpg', type: 'image/jpeg', alt: 'Ursila feeding deer at an animal park' },
+  'asset-5': { src: 'assets/photos/travel-600.jpg', type: 'image/jpeg', alt: 'Ursila standing above coastal cliffs overlooking the ocean' },
+  'asset-6': { src: 'assets/photos/reading-600.jpg', type: 'image/jpeg', alt: 'Illustrated cover art for two books: Ikigai, and Men Are From Mars, Women Are From Venus' },
+  'asset-7': {
     src: 'assets/cv/Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf',
     type: 'application/pdf',
-    download: 'Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf',
+    download: 'Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf', // only set on the <a> after unlock
   },
-  'cv-de': {
+  'asset-8': {
     src: 'assets/cv/Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf',
     type: 'application/pdf',
     download: 'Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf',
@@ -96,6 +105,7 @@ for (const [name, meta] of Object.entries(assets)) {
 
   manifest[name] = { file: `${name}.enc`, type: meta.type };
   if (meta.download) manifest[name].download = meta.download;
+  if (meta.alt) manifest[name].alt = meta.alt;
 
   console.log(`${name}.enc  ${(blob.length / 1024).toFixed(0)}KB  (from ${meta.src})`);
 }

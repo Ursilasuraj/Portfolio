@@ -563,43 +563,24 @@ a {
 /* --- Private assets gate -------------------------------------------------
    Photos and CV PDFs ship as AES-GCM ciphertext (tools/encrypt-assets.mjs) and are
    swapped in as object URLs by js/unlock.js. Until then the <img> carries a blank
-   data-URI placeholder, so these rules give it a neutral surface at the right
-   aspect ratio — the layout is identical locked and unlocked, no shift on reveal. */
+   data-URI placeholder. Deliberately no icon, border, or distinct tint here — the
+   placeholder is styled to match its parent card's own surface (var(--card), the same
+   background .image-card/.hero-card already paint) so the photo slot reads as part of
+   the card rather than a marked "something is hidden here" box. */
 .locked-media {
   position: relative;
   width: 100%;
-  background: var(--bg-soft);
+  background: var(--card);
 }
 
 .locked-media img[data-private-placeholder] {
   aspect-ratio: 4 / 3;
-  background: var(--bg-soft);
+  background: var(--card);
 }
 
 .hero-card .locked-media img[data-private-placeholder] {
   aspect-ratio: 1 / 1;
   height: auto;
-}
-
-.locked-media-note {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  pointer-events: none;
-}
-
-.locked-media-note svg {
-  width: 34px;
-  height: 34px;
-  opacity: 0.55;
-}
-
-/* Once unlocked the note is removed from the flow by JS clearing the placeholder attr */
-.locked-media img:not([data-private-placeholder]) ~ .locked-media-note {
-  display: none;
 }
 
 .unlock-gate {

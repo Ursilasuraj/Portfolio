@@ -12,8 +12,8 @@
 
   "footer.contactCta": "Kontakt aufnehmen →",
 
-  "unlock.prompt": "Fotos und Lebenslauf-Download sind privat. Bitte den Zugangsschlüssel eingeben.",
-  "unlock.promptCv": "Der Lebenslauf-Download ist privat. Bitte den Zugangsschlüssel eingeben.",
+  "unlock.prompt": "Manche Inhalte auf dieser Seite sind privat.",
+  "unlock.promptCv": "Manche Inhalte auf dieser Seite sind privat.",
   "unlock.button": "Persönliche Angaben anzeigen",
   "unlock.label": "Zugangsschlüssel",
   "unlock.submit": "Entsperren",

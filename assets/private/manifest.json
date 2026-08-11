@@ -6,37 +6,43 @@
     "ivBytes": 12
   },
   "assets": {
-    "photo-profile": {
-      "file": "photo-profile.enc",
-      "type": "image/jpeg"
+    "asset-1": {
+      "file": "asset-1.enc",
+      "type": "image/jpeg",
+      "alt": "Portrait of Ursila Pradeep Vadakkumpuram"
     },
-    "photo-profile-400": {
-      "file": "photo-profile-400.enc",
-      "type": "image/jpeg"
+    "asset-2": {
+      "file": "asset-2.enc",
+      "type": "image/jpeg",
+      "alt": "Portrait of Ursila Pradeep Vadakkumpuram"
     },
-    "photo-hiking": {
-      "file": "photo-hiking.enc",
-      "type": "image/jpeg"
+    "asset-3": {
+      "file": "asset-3.enc",
+      "type": "image/jpeg",
+      "alt": "Ursila hiking a mountain trail, with a snow-capped peak in the background"
     },
-    "photo-animals": {
-      "file": "photo-animals.enc",
-      "type": "image/jpeg"
+    "asset-4": {
+      "file": "asset-4.enc",
+      "type": "image/jpeg",
+      "alt": "Ursila feeding deer at an animal park"
     },
-    "photo-travel": {
-      "file": "photo-travel.enc",
-      "type": "image/jpeg"
+    "asset-5": {
+      "file": "asset-5.enc",
+      "type": "image/jpeg",
+      "alt": "Ursila standing above coastal cliffs overlooking the ocean"
     },
-    "photo-reading": {
-      "file": "photo-reading.enc",
-      "type": "image/jpeg"
+    "asset-6": {
+      "file": "asset-6.enc",
+      "type": "image/jpeg",
+      "alt": "Illustrated cover art for two books: Ikigai, and Men Are From Mars, Women Are From Venus"
     },
-    "cv-en": {
-      "file": "cv-en.enc",
+    "asset-7": {
+      "file": "asset-7.enc",
       "type": "application/pdf",
       "download": "Ursila_Pradeep_Vadakkumpuram_CV_EN.pdf"
     },
-    "cv-de": {
-      "file": "cv-de.enc",
+    "asset-8": {
+      "file": "asset-8.enc",
       "type": "application/pdf",
       "download": "Ursila_Pradeep_Vadakkumpuram_Lebenslauf_DE.pdf"
     }

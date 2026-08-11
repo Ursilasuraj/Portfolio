@@ -75,6 +75,10 @@
     if (el.tagName === 'IMG') {
       el.src = url;
       el.removeAttribute('data-private-placeholder');
+      // alt is blank in the HTML (see index.html) so View Source can't describe a photo
+      // that isn't showing — the real description lives only in manifest.json, which
+      // itself is never fetched until an unlock attempt happens. Restore it now.
+      if (entry.alt) el.alt = entry.alt;
     } else if (el.tagName === 'A') {
       el.href = url;
       if (entry.download) el.setAttribute('download', entry.download);
