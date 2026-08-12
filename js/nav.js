@@ -19,7 +19,7 @@
     };
 
     actions.querySelectorAll('.nav-links a').forEach((el) => el.addEventListener('click', closeOnMobile));
-    actions.querySelectorAll('select.theme-select').forEach((el) => el.addEventListener('change', closeOnMobile));
+    actions.querySelectorAll('button.theme-toggle').forEach((el) => el.addEventListener('click', closeOnMobile));
     actions.querySelectorAll('button.lang-toggle').forEach((el) => el.addEventListener('click', closeOnMobile));
 
     document.addEventListener('keydown', (event) => {
