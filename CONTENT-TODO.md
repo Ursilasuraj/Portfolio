@@ -44,33 +44,48 @@ Also still open for every "Done" card: a link to the actual GitHub repo. I don't
 repo URLs — send them (or the naming pattern you use) and I'll add a link per card.
 - Add your grade/score or peer-evaluation result if you want it shown
 
-## 2. Numbers
+## 2. Numbers — ANSWERED 2026-08-19 ✅
 
-Not one bullet on the original CVs carried a metric — no client count, no dataset size, no
-"reduced X by Y%." I didn't invent any. If you can recall even rough figures for these, they'd
-upgrade the Experience and Projects sections a lot:
+These were supplied and are now live on the site:
 
-- **Freelancing (2021–2025):** how many clients? Largest dataset (rows/tables/GB)? What did a
-  dashboard replace, and how long did that manual process take before?
-- **Operations Manager (2019–2020):** how many people in the operation? What did the
-  Excel/DB tracking system measure, and what improved — stockouts, reporting lag, error rate?
-- **42 Heilbronn:** how many projects finished so far? Any peer-evaluation percentile?
-- **ATM project:** team size (solo or paired)? Was it graded?
-- **Management Trainee:** what KPIs, over what sales volume?
+- **2021–2025:** datasets up to **2 GB**; dashboard turnaround **3–5 days → 2–3 hours** once
+  the cleaning pipelines existed; **~30 hrs/week**. No client count, because there were no
+  clients — see §4 below.
+- **Operations Manager:** **25–30 workers**; the tracking system measured attendance,
+  per-worker daily yield and daily raw-latex volume, aggregated monthly for sales. No
+  before/after metric exists, so none is stated.
+- **42 Heilbronn:** **level 4**, twelve completed projects through the CPP modules. No
+  peer-evaluation percentile on record.
+- **ATM project:** **team of 4**, graded **10/10**.
+- **Management Trainee:** **8 customer accounts**, real-estate market trends.
+- **MBA study:** **250 survey responses across 5 outlets**.
 
-## 3. Availability date
+Still missing: nothing here. The one open content question is StartSteps — see §6.
 
-`profile.md` marks this `<TO FILL>`, so it's omitted from the site entirely rather than
-guessed — there's no "available immediately" or similar anywhere. If you want it shown (e.g.
-in the hero's availability bar and on the CV), give me a date or a phrase like "by arrangement."
-Same applies to remote/hybrid/on-site preference, notice period, and driving licence, if you
-want any of those stated.
+## 3. Availability date — ANSWERED 2026-08-19 ✅
 
-## 4. Naming freelance clients / the family business
+All eight standing answers are now filled in `profile.md` §13 and may be stated on the site:
 
-Both are currently described generically ("small businesses," "family business, India") —
-matching your original CVs, which also didn't name them. If you're fine naming them, tell me
-and I'll add it to `experience.html`, `index.html`, and the CV.
+- Earliest start: **September 2026** · Notice period: **none** · **Full-time**
+- Salary expectation: **ca. €50,000 p.a.** (±20%)
+- Driving licence: **class B since 2023, own car**
+- Relocation: **within 200 km of Waiblingen** · Remote / hybrid / on-site: **no preference**
+
+Not all of these belong on a public page — salary in particular. Currently the site states
+none of them; say which you want shown.
+
+## 4. Naming the 2021–2025 period and the family business — RESOLVED 2026-08-19 ✅
+
+**The freelance role was removed from the site.** There were no clients and no engagements —
+it was self-directed study and personal projects, added to the original CV to fill a gap in
+the timeline. Describing it as consulting "for small businesses" was a claim that could not
+survive an interview question, and it was public under her name. It is now stated as
+*Self-directed study — data analysis & software development*, with the real substance named.
+
+The family business is now named for what it is: a **rubber estate in Kerala** running tapping
+crews, collection, barrel storage, preservation, sheet processing and sale, with 25–30 workers.
+
+See `profile.md` DQ-16 and DQ-18 in the Apps repo for the full record.
 
 ## 5. Judgment calls I made — flag if you'd prefer otherwise
 
@@ -101,3 +116,12 @@ currently point at `https://ursilasuraj.github.io/Portfolio/` (the default Pages
 repo). If you enable Pages under **Settings → Pages** and it works, no more mine to do — but
 if you get a custom domain (e.g. `ursilapradeep.dev`), tell me and I'll do a global find/replace
 across every canonical/OG tag, the sitemap, and `robots.txt`.
+
+---
+
+## 6. The one open content question
+
+**StartSteps (2022).** It was removed from every certification list on the site and from both
+CVs, because its content is not documented anywhere and cannot be described if an interviewer
+asks. It reads as an AI credential purely because of the name — it is not one. One sentence
+about what it actually covered (topic, duration, format) puts it back on the page.
