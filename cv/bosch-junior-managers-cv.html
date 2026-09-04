@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ursila Pradeep Vadakkumpuram — CV</title>
+    <style>
+      :root {
+        --ink: #14212e;
+        --ink-soft: #4a5b6d;
+        --rule: #d3dbe3;
+        --accent: #14212e;
+        --fill-bg: #fff4d6;
+        --fill-ink: #7a5a10;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { background: #eceff3; }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+        font-size: 10.2pt;
+        line-height: 1.42;
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12mm auto;
+        padding: 14mm 16mm 13mm;
+        background: #fff;
+        box-shadow: 0 8px 30px rgba(20, 33, 46, 0.16);
+      }
+
+      /* ---------- header ---------- */
+
+      header { border-bottom: 2px solid var(--accent); padding-bottom: 7px; }
+
+      h1 {
+        margin: 0;
+        font-size: 20.5pt;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        line-height: 1.15;
+      }
+
+      .headline {
+        margin: 4px 0 7px;
+        font-size: 10.6pt;
+        font-weight: 600;
+        color: var(--ink-soft);
+        letter-spacing: 0.01em;
+      }
+
+      .contact {
+        margin: 0;
+        font-size: 8.9pt;
+        color: var(--ink-soft);
+        line-height: 1.75;
+      }
+
+      .contact .sep { color: var(--rule); padding: 0 5px; }
+
+      /* ---------- sections ---------- */
+
+      section { margin-top: 13px; }
+
+      h2 {
+        margin: 0 0 7px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid var(--rule);
+        font-size: 9.4pt;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .summary { margin: 0; text-align: justify; }
+
+      .entry { margin-bottom: 9px; page-break-inside: avoid; }
+      .entry:last-child { margin-bottom: 0; }
+
+      .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .role { font-weight: 700; font-size: 10.6pt; }
+
+      .dates {
+        flex: none;
+        font-size: 9pt;
+        font-weight: 600;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+
+      .org {
+        font-size: 9.6pt;
+        font-style: italic;
+        color: var(--ink-soft);
+        margin-top: 1px;
+      }
+
+      ul { margin: 4px 0 0; padding-left: 15px; }
+      li { margin-bottom: 2px; }
+      li::marker { color: var(--ink-soft); }
+
+      /* ---------- two-column detail rows ---------- */
+
+      .row {
+        display: grid;
+        grid-template-columns: 128px 1fr;
+        gap: 4px 12px;
+        margin-bottom: 3px;
+      }
+
+      .row:last-child { margin-bottom: 0; }
+      .row dt { font-weight: 600; }
+      .row dd { margin: 0; }
+
+      /* ---------- to-be-completed markers ---------- */
+
+      .fill {
+        background: var(--fill-bg);
+        color: var(--fill-ink);
+        font-weight: 600;
+        padding: 0 4px;
+        border-radius: 2px;
+      }
+
+      /* Add class="final" to <body> once every [ ... ] slot is filled in:
+         the highlighting disappears and the text prints as normal copy. */
+      body.final .fill {
+        background: none;
+        color: inherit;
+        font-weight: inherit;
+        padding: 0;
+      }
+
+      /* ---------- print ---------- */
+
+      @page { size: A4; margin: 0; }
+
+      @media print {
+        html { background: #fff; }
+        .page {
+          width: auto;
+          min-height: 0;
+          margin: 0;
+          padding: 13mm 15mm;
+          box-shadow: none;
+        }
+        section { page-break-inside: auto; }
+        h2 { page-break-after: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Ursila Pradeep Vadakkumpuram</h1>
+        <p class="headline">
+          MBA Supply Chain Management &middot; Operations &amp; Data Analytics &middot; Software Engineering
+        </p>
+        <p class="contact">
+          <span class="fill">[ Street, Postal code, City, Germany ]</span><span class="sep">|</span><span class="fill">[ Phone ]</span><span class="sep">|</span><span class="fill">[ Email ]</span><br />
+          <span class="fill">[ LinkedIn URL ]</span><span class="sep">|</span><span class="fill">[ Nationality ]</span><span class="sep">|</span><span class="fill">[ Work authorisation for Germany ]</span>
+        </p>
+      </header>
+
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">
+          MBA in Supply Chain Management with nearly seven years spanning operations
+          management, freelance data consulting and management training (2018&ndash;2025),
+          currently completing full-time software engineering training at 42 Heilbronn.
+          I combine supply chain and operations grounding with hands-on data capability
+          &mdash; SQL data modelling, Tableau and Power BI reporting &mdash; and a
+          software engineer's discipline in how systems are built and debugged. I am
+          applying to the Bosch Junior Managers Program to develop as a leader in a
+          global supply chain organisation.
+        </p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Software Engineering Programme</span>
+            <span class="dates">May 2025 &ndash; Present</span>
+          </div>
+          <div class="org">42 Heilbronn &mdash; Heilbronn, Germany</div>
+          <ul>
+            <li>Full-time, project-based training in modular C programming and manual memory management.</li>
+            <li>Peer review as the core assessment method: evaluating and defending code with other students daily.</li>
+            <li>Structured debugging and code-quality discipline across independently scoped projects.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Master of Business Administration &mdash; Supply Chain Management</span>
+            <span class="dates">Jun 2016 &ndash; May 2018</span>
+          </div>
+          <div class="org">
+            <span class="fill">[ University name, City, Country ]</span>
+            &mdash; Final grade: <span class="fill">[ grade / GPA + scale ]</span>
+          </div>
+          <ul>
+            <li>Operations strategy, project management and data-driven decision-making in complex business environments.</li>
+            <li>Master's thesis: <span class="fill">[ thesis title and grade ]</span></li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Bachelor of Engineering &mdash; Computer Science</span>
+            <span class="dates">Aug 2011 &ndash; Jun 2015</span>
+          </div>
+          <div class="org">
+            <span class="fill">[ University name, City, Country ]</span>
+            &mdash; Final grade: <span class="fill">[ grade / GPA + scale ]</span>
+          </div>
+          <ul>
+            <li>Object-oriented programming, database systems, C/C++ and software design principles.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Freelance IT &amp; Data Consultant</span>
+            <span class="dates">Jan 2021 &ndash; Mar 2025</span>
+          </div>
+          <div class="org">Self-employed &mdash; <span class="fill">[ City, Country ]</span></div>
+          <ul>
+            <li>Built SQL data models and Tableau dashboards for small-business clients, turning operational and commercial data into reporting they could act on.</li>
+            <li>Delivered reporting solutions across <span class="fill">[ number ]</span> clients in <span class="fill">[ sectors ]</span>.</li>
+            <li><span class="fill">[ One measurable outcome &mdash; e.g. reporting cycle reduced from X to Y, or a decision the dashboard changed ]</span></li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Operations Manager</span>
+            <span class="dates">Jan 2019 &ndash; Dec 2020</span>
+          </div>
+          <div class="org"><span class="fill">[ Employer, City, Country ]</span></div>
+          <ul>
+            <li>Improved process stability across operational teams and strengthened operational reporting between them.</li>
+            <li>Built data-driven tracking systems to monitor day-to-day operational performance.</li>
+            <li>Led <span class="fill">[ team size ]</span> across <span class="fill">[ scope: sites, volumes, product lines ]</span>.</li>
+            <li><span class="fill">[ One measurable improvement &mdash; e.g. % change in on-time delivery, error rate, throughput or cost ]</span></li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Management Trainee</span>
+            <span class="dates">Jun 2018 &ndash; Dec 2018</span>
+          </div>
+          <div class="org"><span class="fill">[ Employer, City, Country ]</span></div>
+          <ul>
+            <li>Coordinated between sales and technical teams, bridging commercial requirements and technical delivery.</li>
+            <li>Produced Excel-based analysis to support management decision-making.</li>
+            <li>Rotated through <span class="fill">[ which functions / departments ]</span>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>International Experience</h2>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role"><span class="fill">[ Country &mdash; organisation / university / employer ]</span></span>
+            <span class="dates"><span class="fill">[ dates ]</span></span>
+          </div>
+          <ul>
+            <li><span class="fill">[ Required by the advert: at least three months abroad. State the country, the organisation, the exact dates and the total duration. Relocating to Germany for 42 Heilbronn qualifies if you moved from another country &mdash; if so, name your home country and the relocation date here. ]</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Retail &amp; E-Commerce Assortment Optimisation</span>
+            <span class="dates">Jan 2018 &ndash; May 2018</span>
+          </div>
+          <ul>
+            <li>Data cleaning and survey analysis feeding dashboard-backed recommendations for assortment optimisation.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role">Secure ATM Access with Biometrics and OTP</span>
+            <span class="dates">Nov 2014 &ndash; Apr 2015</span>
+          </div>
+          <ul>
+            <li>Prototype for secure banking transactions combining biometric authentication, card-reader integration and a MySQL-backed system.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <dl class="row"><dt>Data &amp; Analytics</dt><dd>SQL, MySQL, SQL Server, data modelling, Tableau, Power BI, MS Excel</dd></dl>
+        <dl class="row"><dt>Programming</dt><dd>C, C++, Python</dd></dl>
+        <dl class="row"><dt>Supply Chain &amp; Operations</dt><dd>Operations strategy, project planning, process improvement, operational reporting</dd></dl>
+        <dl class="row"><dt>Ways of Working</dt><dd>Agile &amp; Scrum, Git, debugging &amp; testing, VS Code, JetBrains IDEs</dd></dl>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <dl class="row"><dt><span class="fill">[ year ]</span></dt><dd>Google Data Analytics Professional Certificate</dd></dl>
+        <dl class="row"><dt><span class="fill">[ year ]</span></dt><dd>StartSteps &mdash; Artificial Intelligence</dd></dl>
+        <dl class="row"><dt><span class="fill">[ year ]</span></dt><dd>HackerRank &mdash; Python</dd></dl>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <dl class="row"><dt>English</dt><dd><span class="fill">[ CEFR level &mdash; the advert asks for negotiation level ]</span></dd></dl>
+        <dl class="row"><dt>German</dt><dd><span class="fill">[ CEFR level &mdash; the advert asks for good German ]</span></dd></dl>
+        <dl class="row"><dt>Malayalam</dt><dd><span class="fill">[ level, e.g. native ]</span></dd></dl>
+      </section>
+    </div>
+  </body>
+</html>
