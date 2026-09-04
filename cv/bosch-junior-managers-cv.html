@@ -38,7 +38,22 @@
 
       /* ---------- header ---------- */
 
-      header { border-bottom: 2px solid var(--accent); padding-bottom: 7px; }
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: start;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 7px;
+      }
+
+      .photo {
+        width: 30mm;
+        height: 38.6mm;      /* 35:45, the standard German CV portrait ratio */
+        object-fit: cover;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+      }
 
       h1 {
         margin: 0;
@@ -167,14 +182,17 @@
   <body>
     <div class="page">
       <header>
+        <div>
         <h1>Ursila Pradeep Vadakkumpuram</h1>
         <p class="headline">
-          MBA Supply Chain Management &middot; Operations &amp; Data Analytics &middot; Software Engineering
+          MBA Supply Chain Management &middot; Data Analytics &middot; Software Engineering
         </p>
         <p class="contact">
           <span class="fill">[ Street, Postal code, City, Germany ]</span><span class="sep">|</span><span class="fill">[ Phone ]</span><span class="sep">|</span><span class="fill">[ Email ]</span><br />
           <span class="fill">[ LinkedIn URL ]</span><span class="sep">|</span><span class="fill">[ Nationality ]</span><span class="sep">|</span><span class="fill">[ Work authorisation for Germany ]</span>
         </p>
+        </div>
+        <img class="photo" src="profile-photo.jpg" alt="Ursila Pradeep Vadakkumpuram" />
       </header>
 
       <section>
@@ -285,11 +303,12 @@
         <h2>International Experience</h2>
         <div class="entry">
           <div class="entry-head">
-            <span class="role"><span class="fill">[ Country &mdash; organisation / university / employer ]</span></span>
+            <span class="role"><span class="fill">[ Job title &mdash; Employer, City, Country ]</span></span>
             <span class="dates"><span class="fill">[ dates ]</span></span>
           </div>
           <ul>
-            <li><span class="fill">[ Required by the advert: at least three months abroad. State the country, the organisation, the exact dates and the total duration. Relocating to Germany for 42 Heilbronn qualifies if you moved from another country &mdash; if so, name your home country and the relocation date here. ]</span></li>
+            <li><span class="fill">[ Name whichever of the roles above was based outside your home country, the country, and the total time spent there. The advert requires a minimum of three months, so state the duration explicitly rather than leaving it to be counted. ]</span></li>
+            <li><span class="fill">[ Optional but strong: the cross-border dimension of the work &mdash; international suppliers, customers or teams you dealt with, and in which languages. ]</span></li>
           </ul>
         </div>
       </section>
