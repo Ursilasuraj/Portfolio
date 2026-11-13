@@ -94,18 +94,16 @@
           <div class="project-note">
             <strong data-i18n="projects.core.noteLabel">A note on status:</strong>
             <span data-i18n="projects.core.noteBody">
-              These are the 42 Heilbronn projects I've completed and defended so far — not the full curriculum.
+              These are the 42 Heilbronn projects I've completed and defended so far, plus the one I'm working on now — not the full curriculum.
               More get added here as I finish and defend them.
             </span>
           </div>
 
           <div class="project-grid" style="margin-top: 1.75rem;">
-            <!-- Only confirmed-done 42 projects are shown here (per Ursila's request). The remaining
-                 common-core projects (philosophers, cub3D, NetPractice, CPP Modules, webserv, ft_irc,
-                 inception) exist but are not yet confirmed done — see CONTENT-TODO.md item 1. Do not
-                 add a card for any of them without her explicit sign-off.
-                 Repo links: point at github.com/ursilapradeep (42_-prefixed repos, checked 2026-11-13). get_next_line,
-                 born2beroot, and minitalk have no matching public repo — see CONTENT-TODO.md item 1a. -->
+            <!-- Projects shown here are the ones Ursila has confirmed. philosophers, NetPractice and the
+                 CPP modules were added on her instruction (2026-11-13); the CPP modules are marked in
+                 progress. Repo links point at github.com/ursilapradeep. get_next_line, born2beroot and
+                 minitalk have no public repo. Do not add a card without her explicit sign-off. -->
             <article class="card project-card" data-status="done">
               <div class="project-card-head">
                 <h3>libft</h3>
@@ -185,6 +183,36 @@
               <p data-i18n="projects.core.minishell">A working UNIX shell: parsing, pipes, redirections, built-ins, and signal handling.</p>
               <div class="project-links">
                 <a href="https://github.com/ursilapradeep/42_Minishell" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
+            </article>
+            <article class="card project-card" data-status="done">
+              <div class="project-card-head">
+                <h3>philosophers</h3>
+                <span class="status-badge status-done" data-i18n="status.done">Done</span>
+              </div>
+              <p data-i18n="projects.core.philo">The dining philosophers problem with threads and mutexes: no deadlocks, no data races.</p>
+              <div class="project-links">
+                <a href="https://github.com/ursilapradeep/42_Philosophers" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
+            </article>
+            <article class="card project-card" data-status="done">
+              <div class="project-card-head">
+                <h3>NetPractice</h3>
+                <span class="status-badge status-done" data-i18n="status.done">Done</span>
+              </div>
+              <p data-i18n="projects.core.netpractice">Configure small networks so they work: IP addressing, subnet masks, and routing.</p>
+              <div class="project-links">
+                <a href="https://github.com/ursilapradeep/Net_practice" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+              </div>
+            </article>
+            <article class="card project-card is-unconfirmed" data-status="in-progress">
+              <div class="project-card-head">
+                <h3>CPP Modules</h3>
+                <span class="status-badge status-unconfirmed" data-i18n="status.inProgress">In progress</span>
+              </div>
+              <p data-i18n="projects.core.cpp">Object-oriented C++98, module by module: classes, inheritance, polymorphism, exceptions, and templates. Modules 00–07 are on GitHub so far.</p>
+              <div class="project-links">
+                <a href="https://github.com/ursilapradeep?tab=repositories&amp;q=cpp" target="_blank" rel="noopener" data-i18n="projects.core.viewRepos">View repos →</a>
               </div>
             </article>
           </div>
