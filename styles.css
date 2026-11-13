@@ -1421,3 +1421,64 @@ body {
     border-top: 1px solid var(--border);
   }
 }
+
+/* ==========================================================================
+   Motion (js/motion.js adds .reveal / .is-visible and the looping clips).
+   Everything here sits behind prefers-reduced-motion: no-preference.
+   ========================================================================== */
+
+/* Looping clip laid over a project card's static image */
+.case-media {
+  position: relative;
+}
+
+.case-loop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.case-media.has-loop .case-loop {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Fade-in on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .case-card.reveal:nth-child(2) {
+    transition-delay: 80ms;
+  }
+
+  .case-card.reveal:nth-child(3) {
+    transition-delay: 160ms;
+  }
+
+  /* Hover lift on project cards */
+  .case-card,
+  .project-card,
+  .earlier-card {
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .case-card:not(.reveal):hover,
+  .project-card:not(.reveal):hover,
+  .earlier-card:not(.reveal):hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+}
