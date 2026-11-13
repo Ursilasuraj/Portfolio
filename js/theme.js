@@ -18,7 +18,7 @@ function applyTheme(theme) {
 
 // Sync with whatever the inline head script already applied (it may have used a saved
 // value or the OS preference) rather than re-deciding from scratch.
-applyTheme(root.getAttribute('data-theme') || 'dark');
+applyTheme(root.getAttribute('data-theme') || 'light');
 
 if (toggle) {
   toggle.addEventListener('click', () => {
