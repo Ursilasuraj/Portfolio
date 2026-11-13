@@ -218,39 +218,125 @@
       <section id="projects" class="section">
         <div class="container">
           <p class="eyebrow" data-i18n="home.projects.eyebrow">Featured Work</p>
-          <h2 data-i18n="home.projects.title">Current work from 42 Heilbronn — written in C, defended in peer review.</h2>
-          <div class="project-grid">
-            <article class="card project-card" data-status="done">
-              <div class="project-card-head">
-                <h3>minishell</h3>
-                <span class="status-badge status-done" data-i18n="status.done">Done</span>
-              </div>
-              <p data-i18n="projects.core.minishell">A working UNIX shell: parsing, pipes, redirections, built-ins, and signal handling.</p>
-              <div class="project-links">
-                <a href="https://github.com/ursilapradeep/42_Minishell" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+          <h2 data-i18n="home.projects.title">Three projects, and what each one took.</h2>
+
+          <div class="case-list">
+            <article class="card case-card">
+              <a class="case-media" href="https://github.com/ursilapradeep/miniRT" target="_blank" rel="noopener">
+                <img src="assets/projects/minirt.png" width="800" height="600" loading="lazy" alt="Ray-traced scene rendered by miniRT: a red sphere and a blue cylinder on a grey plane, each casting a hard shadow" />
+              </a>
+              <div class="case-body">
+                <div class="project-card-head">
+                  <h3>miniRT</h3>
+                </div>
+                <p class="meta" data-i18n="home.fw.minirt.meta">Ray tracer in C · 42 Heilbronn · pair project · 2026</p>
+                <dl class="case-facts">
+                  <dt data-i18n="fw.problem">Problem</dt>
+                  <dd data-i18n="home.fw.minirt.problem">Turn a plain-text scene file — camera, lights, spheres, planes, cylinders — into a rendered 3D image, with no graphics engine: only C, vector maths and a pixel buffer.</dd>
+                  <dt data-i18n="fw.built">What I built</dt>
+                  <dd data-i18n="home.fw.minirt.built">Built with one teammate. My commits cover the diffuse lighting and hard shadows, moving and rotating the camera and each object from the keyboard (with a reset), and the scene-file parsing with its error handling.</dd>
+                  <dt data-i18n="fw.hard">What was hard</dt>
+                  <dd data-i18n="home.fw.minirt.hard">The cylinder. Its intersection means projecting the ray onto the cylinder's axis before solving the quadratic — and it has to stay correct once the object can be rotated.</dd>
+                  <dt data-i18n="fw.tech">Tech</dt>
+                  <dd>
+                    <ul class="tag-list">
+                      <li>C</li>
+                      <li>MiniLibX</li>
+                      <li data-i18n="home.fw.minirt.tag3">Vector maths</li>
+                      <li>Makefile</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <div class="project-links">
+                  <a href="https://github.com/ursilapradeep/miniRT" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+                </div>
               </div>
             </article>
-            <article class="card project-card" data-status="done">
-              <div class="project-card-head">
-                <h3>push_swap</h3>
-                <span class="status-badge status-done" data-i18n="status.done">Done</span>
-              </div>
-              <p data-i18n="projects.core.pushswap">Sort a stack in the fewest possible moves using two stacks and a constrained instruction set.</p>
-              <div class="project-links">
-                <a href="https://github.com/ursilapradeep/42_Push_Swap" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+
+            <article class="card case-card">
+              <a class="case-media" href="https://github.com/ursilapradeep/42_Minishell" target="_blank" rel="noopener">
+                <img src="assets/projects/minishell.png" width="1126" height="750" loading="lazy" alt="Terminal session inside minishell: the prompt reads minishell$ and runs ls -la, pwd and ls" />
+              </a>
+              <div class="case-body">
+                <div class="project-card-head">
+                  <h3>minishell</h3>
+                  <span class="status-badge status-done" data-i18n="status.done">Done</span>
+                </div>
+                <p class="meta" data-i18n="home.fw.minishell.meta">Unix shell in C · 42 Heilbronn · pair project · 2026</p>
+                <dl class="case-facts">
+                  <dt data-i18n="fw.problem">Problem</dt>
+                  <dd data-i18n="home.fw.minishell.problem">Rebuild the core of Bash: read a command line and run it, with pipes, redirections, environment variables and signals behaving the way they do in the real shell.</dd>
+                  <dt data-i18n="fw.built">What I built</dt>
+                  <dd data-i18n="home.fw.minishell.built">Built with one teammate as a pipeline: tokenizer, parser, expander, executor. My commits cover pipes, redirections and heredoc, the executor, PATH lookup, quote handling and the signal handling.</dd>
+                  <dt data-i18n="fw.hard">What was hard</dt>
+                  <dd data-i18n="home.fw.minishell.hard">Matching Bash on the edge cases: what Ctrl-C and Ctrl-\ do at the prompt versus inside a running command, mixed quotes, and which syntax error is reported first. We ran the same input through Bash and compared the output.</dd>
+                  <dt data-i18n="fw.tech">Tech</dt>
+                  <dd>
+                    <ul class="tag-list">
+                      <li>C</li>
+                      <li>fork · execve</li>
+                      <li>pipe · dup2</li>
+                      <li data-i18n="home.fw.minishell.tag4">Signals</li>
+                      <li>readline</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <div class="project-links">
+                  <a href="https://github.com/ursilapradeep/42_Minishell" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+                </div>
               </div>
             </article>
-            <article class="card project-card" data-status="done">
-              <div class="project-card-head">
-                <h3>so_long</h3>
-                <span class="status-badge status-done" data-i18n="status.done">Done</span>
-              </div>
-              <p data-i18n="projects.core.solong">A small 2D game: sprites, movement, and collision using the MiniLibX graphics library.</p>
-              <div class="project-links">
-                <a href="https://github.com/ursilapradeep/42_So_long" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+
+            <article class="card case-card">
+              <a class="case-media" href="https://github.com/ursilapradeep/GreenCityHackathon2026" target="_blank" rel="noopener">
+                <img src="assets/projects/ecocity.png" width="980" height="770" loading="lazy" alt="EcoCity HN home page: 26 sensor bikes, 201,156 readings and 18 ranked areas of Heilbronn, with highlights for the coolest, cleanest and most livable area" />
+              </a>
+              <div class="case-body">
+                <div class="project-card-head">
+                  <h3>EcoCity HN</h3>
+                  <span class="status-badge status-unconfirmed" data-i18n="status.prototype">Prototype</span>
+                </div>
+                <p class="meta" data-i18n="home.fw.eco.meta">Streamlit data app · Green City Heilbronn Hackathon · team project · Oct 2026</p>
+                <dl class="case-facts">
+                  <dt data-i18n="fw.problem">Problem</dt>
+                  <dd data-i18n="home.fw.eco.problem">Bikes fitted with sensors measure heat and fine dust across Heilbronn, but the readings sit in raw tables. The city needs to see, per neighbourhood, where it is hot, dusty or rough to cycle.</dd>
+                  <dt data-i18n="fw.built">What I built</dt>
+                  <dd data-i18n="home.fw.eco.built">Built in a hackathon team: a map, a dashboard and a livability score over 201,156 readings from 26 sensor bikes in 18 areas. My commits cover the home page, the English/German switch and the clean-up of the tab structure.</dd>
+                  <dt data-i18n="fw.hard">What was hard</dt>
+                  <dd data-i18n="home.fw.eco.hard">The data, not the code. Sensors standing side by side differed by about 1.7&nbsp;°C — more than the gap between neighbourhoods — so the app compares each area with the whole city at the same hour and presents temperatures as tendencies. Still a prototype: a 3D map is next on the roadmap.</dd>
+                  <dt data-i18n="fw.tech">Tech</dt>
+                  <dd>
+                    <ul class="tag-list">
+                      <li>Python</li>
+                      <li>Streamlit</li>
+                      <li>pandas</li>
+                      <li>folium</li>
+                      <li>Plotly</li>
+                      <li>NetworkX</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <div class="project-links">
+                  <a href="https://github.com/ursilapradeep/GreenCityHackathon2026" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+                </div>
               </div>
             </article>
           </div>
+
+          <h3 class="earlier-heading" data-i18n="home.earlier.title">Earlier work</h3>
+          <div class="earlier-row">
+            <article class="card earlier-card">
+              <p class="meta" data-i18n="home.earlier.atm.meta">2014 – 2015 · BE final-year project · team of four</p>
+              <h4 data-i18n="projects.atm.title">Secure ATM Access — Biometrics &amp; OTP</h4>
+              <p data-i18n="home.earlier.atm.body">Prototype for bank transactions secured by biometric authentication and a card reader, on a MySQL database.</p>
+            </article>
+            <article class="card earlier-card">
+              <p class="meta" data-i18n="home.earlier.retail.meta">2018 · MBA field project, Bangalore</p>
+              <h4 data-i18n="projects.retail.title">Retail &amp; E-Commerce Assortment Analytics</h4>
+              <p data-i18n="home.earlier.retail.body">Customer surveys across small retailers, cleaned and turned into Excel dashboards and purchasing recommendations.</p>
+            </article>
+          </div>
+
           <p class="section-link-row">
             <a class="btn btn-secondary" href="projects.html" data-i18n="home.projects.viewAll">View all projects</a>
           </p>

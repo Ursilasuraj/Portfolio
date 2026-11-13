@@ -901,3 +901,133 @@ a {
     align-items: flex-start;
   }
 }
+
+/* Featured Work case studies (home page): image beside a problem / built / hard / tech list. */
+.case-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.case-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 1.75rem;
+  align-items: start;
+  padding: 1.5rem;
+}
+
+.case-card:nth-child(even) .case-media {
+  order: 2;
+}
+
+.case-media {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0d0906;
+}
+
+.case-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-body {
+  min-width: 0;
+}
+
+.case-body .project-card-head h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.case-facts {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 0.7rem 1rem;
+  margin: 1rem 0 0;
+}
+
+.case-facts dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+
+.case-facts dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.case-facts .tag-list {
+  margin: 0;
+}
+
+.earlier-heading {
+  margin: 2.5rem 0 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.earlier-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.earlier-card {
+  padding: 1rem 1.2rem;
+  box-shadow: none;
+}
+
+.earlier-card h4 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.earlier-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.earlier-card .meta {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 860px) {
+  .case-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+    padding: 1.1rem;
+  }
+
+  .case-card:nth-child(even) .case-media {
+    order: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
+  }
+
+  .case-facts dd {
+    margin-bottom: 0.6rem;
+  }
+
+  .earlier-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
