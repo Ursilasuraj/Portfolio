@@ -1651,3 +1651,196 @@ body {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* ==========================================================================
+   Career path: experience and education as one vertical timeline.
+   Desktop: date column | line with dots | content. Phone: line on the left,
+   date stacked above the content.
+   ========================================================================== */
+.path {
+  --path-date: 11.5rem;
+  --path-gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* the line */
+.path::before {
+  content: '';
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: calc(var(--path-date) + var(--path-gap) / 2);
+  width: 1px;
+  background: var(--border);
+}
+
+.path-item {
+  display: grid;
+  grid-template-columns: var(--path-date) minmax(0, 1fr);
+  column-gap: var(--path-gap);
+  position: relative;
+  padding: 0 0 1.9rem;
+}
+
+/* the dot */
+.path-item::before {
+  content: '';
+  position: absolute;
+  top: 0.4rem;
+  left: calc(var(--path-date) + var(--path-gap) / 2 - 4px);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--page-bg);
+  border: 2px solid var(--accent);
+  box-sizing: border-box;
+}
+
+.section-light .path-item::before {
+  background: var(--section-alt);
+}
+
+.path-date {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 0.15rem;
+}
+
+.path-kind {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.path-body h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.path-org {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.path-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 70ch;
+}
+
+.path-body .path-org {
+  font-size: 0.9rem;
+}
+
+.path-body ul {
+  list-style: disc;
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 72ch;
+}
+
+.path-body li + li {
+  margin-top: 0.3rem;
+}
+
+.path-body a {
+  color: var(--accent);
+}
+
+/* country markers sit on the line */
+.path-place {
+  position: relative;
+  padding: 0 0 1.4rem;
+  padding-left: calc(var(--path-date) + var(--path-gap) / 2 - 2.6rem);
+}
+
+.path-place:not(:first-child) {
+  padding-top: 0.6rem;
+}
+
+.path-place span {
+  display: inline-block;
+  min-width: 5.2rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.5rem;
+  position: relative;
+}
+
+/* where the path stands today */
+.path-item-now {
+  padding-bottom: 0;
+}
+
+.path-item-now::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .path-item-now::before {
+    animation: path-now 2.4s ease-out infinite;
+  }
+
+  @keyframes path-now {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
+    }
+    100% {
+      box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 0%, transparent);
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .path::before {
+    left: 4px;
+  }
+
+  .path-item {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 1.6rem;
+  }
+
+  .path-item::before {
+    left: 0;
+    top: 0.3rem;
+  }
+
+  .path-date {
+    text-align: left;
+    padding-top: 0;
+    margin-bottom: 0.15rem;
+  }
+
+  .path-place {
+    padding-left: 1.6rem;
+  }
+
+  .path-place span {
+    min-width: 0;
+  }
+}

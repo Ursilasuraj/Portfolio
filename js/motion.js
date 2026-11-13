@@ -13,7 +13,7 @@
 
   // 1. Fade-in on scroll
   var targets = document.querySelectorAll(
-    'main .section h2, main .card, main .mini-card, main .timeline-card, main .image-card, main .stat-grid, main .project-note'
+    'main .section h2, main .card, main .mini-card, main .timeline-card, main .image-card, main .stat-grid, main .project-note, main .path-item'
   );
   var viewport = window.innerHeight;
   var reveal = new IntersectionObserver(
