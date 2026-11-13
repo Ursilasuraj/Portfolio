@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Source for assets/photos/reading*.{jpg,webp} — an illustrated cover graphic (not a
+     photo) for the Reading hobby card, referencing two of Ursila's books: Ikigai and Men Are
+     From Mars, Women Are From Venus. Rendered via headless Chromium, then resized/converted
+     through the same pipeline as the real hobby photos (see tools/optimize-images.mjs).
+     To regenerate after editing:
+       node -e "require('playwright-core').chromium.launch({executablePath:process.env.CHROMIUM_PATH})
+         .then(async b=>{const p=await b.newPage({viewport:{width:1000,height:750}});
+         await p.goto('file://'+process.cwd()+'/tools/reading-cover.html');
+         await p.screenshot({path:'/tmp/reading-cover.png'});await b.close();})"
+     then resize /tmp/reading-cover.png to 1000x750 and 600x450 as webp+jpg into assets/photos/. -->
+<html><head><meta charset="utf-8"><style>
+  @font-face{font-family:'Inter';src:url('../assets/fonts/inter-latin.woff2') format('woff2');font-weight:300 800;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    width:1000px;height:750px;font-family:'Inter',sans-serif;
+    background:linear-gradient(160deg,#f3e9dc 0%,#ecdcc4 55%,#e4cfae 100%);
+    position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  }
+  body::before{ /* soft table shadow vignette */
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 60%, rgba(0,0,0,0.10), transparent 65%);
+  }
+  .book{
+    position:absolute;width:340px;height:490px;border-radius:6px;
+    box-shadow:0 30px 60px rgba(40,25,10,0.35), 0 6px 14px rgba(40,25,10,0.25);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+    padding:34px 26px;color:#fff;text-align:center;
+  }
+  .book::after{ /* page edge */
+    content:'';position:absolute;right:-7px;top:6px;bottom:6px;width:10px;
+    background:repeating-linear-gradient(180deg,#fff 0 2px,#e7e1d4 2px 4px);
+    border-radius:0 3px 3px 0;
+  }
+  .ikigai{
+    left:105px;top:118px;transform:rotate(-6deg);
+    background:radial-gradient(circle at 50% 30%, #e2703a, #b5431f 70%, #8f2f14 100%);
+    z-index:1;
+  }
+  .marsvenus{
+    left:555px;top:98px;transform:rotate(5deg);
+    background:linear-gradient(165deg,#3a3f7d 0%, #262a5e 55%, #181a3f 100%);
+    z-index:2;
+  }
+  .ikigai .motif{
+    position:absolute;top:70px;left:50%;transform:translateX(-50%);
+    width:150px;height:150px;border-radius:50%;
+    border:3px solid rgba(255,255,255,0.85);
+  }
+  .ikigai .motif::before{
+    content:'';position:absolute;inset:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.55);
+  }
+  .ikigai .motif::after{
+    content:'';position:absolute;inset:0;margin:auto;width:14px;height:14px;border-radius:50%;
+    background:rgba(255,255,255,0.9);top:8px;
+  }
+  .ikigai .kicker{font-size:13px;letter-spacing:0.32em;font-weight:600;opacity:0.85;margin-bottom:10px;text-transform:uppercase;}
+  .ikigai h1{font-size:44px;font-weight:800;letter-spacing:0.14em;margin-bottom:14px;}
+  .ikigai p{font-size:14.5px;font-weight:400;line-height:1.5;opacity:0.92;max-width:230px;}
+
+  .marsvenus .motif{
+    position:relative;width:170px;height:100px;margin-bottom:18px;
+  }
+  .marsvenus .motif svg{width:100%;height:100%;}
+  .marsvenus .kicker{font-size:12.5px;letter-spacing:0.28em;font-weight:600;opacity:0.75;margin-bottom:12px;text-transform:uppercase;}
+  .marsvenus h1{font-size:27px;font-weight:800;line-height:1.28;letter-spacing:0.01em;margin-bottom:12px;}
+  .marsvenus p{font-size:13.5px;opacity:0.8;font-weight:500;}
+</style></head>
+<body>
+  <div class="book ikigai">
+    <div class="motif"></div>
+    <p class="kicker">A reason for being</p>
+    <h1>IKIGAI</h1>
+    <p>The Japanese secret to a long and happy life</p>
+  </div>
+  <div class="book marsvenus">
+    <div class="motif">
+      <svg viewBox="0 0 170 100" fill="none">
+        <circle cx="60" cy="55" r="26" stroke="#fff" stroke-width="4"/>
+        <line x1="79" y1="36" x2="102" y2="13" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        <line x1="102" y1="13" x2="86" y2="13" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        <line x1="102" y1="13" x2="102" y2="29" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="125" cy="55" r="24" stroke="#fbb1c9" stroke-width="4"/>
+        <line x1="125" y1="79" x2="125" y2="97" stroke="#fbb1c9" stroke-width="4" stroke-linecap="round"/>
+        <line x1="113" y1="90" x2="137" y2="90" stroke="#fbb1c9" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="kicker">John Gray</p>
+    <h1>Men Are From Mars,<br/>Women Are From Venus</h1>
+  </div>
+</body></html>
