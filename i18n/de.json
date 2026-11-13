@@ -211,5 +211,8 @@
   "path.gda.body": "Alle acht Kurse des Programms, abgeschlossen 2023.",
   "path.licence.title": "Führerschein Klasse B",
   "path.hackerrank.title": "HackerRank — Python (Intermediate) und SQL",
-  "path.b2.title": "Deutsch-Vorbereitungskurs B2"
+  "path.b2.title": "Deutsch-Vorbereitungskurs B2",
+  "path.kind.course": "Kurs",
+  "path.compass.title": "StartSteps Compass — Orientierungskurs",
+  "path.compass.body": "Ein Orientierungskurs zu verschiedenen Berufsbildern in der IT, darunter Projektmanagement, Datenanalyse und Cybersicherheit."
 }
