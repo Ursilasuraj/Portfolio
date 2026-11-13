@@ -250,6 +250,7 @@
                 </dl>
                 <div class="project-links">
                   <a href="https://github.com/ursilapradeep/miniRT" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+                  <button type="button" class="btn btn-secondary btn-sm demo-open" data-demo="minirt" data-i18n="demo.try" hidden>Try it</button>
                 </div>
               </div>
             </article>
@@ -284,6 +285,7 @@
                 </dl>
                 <div class="project-links">
                   <a href="https://github.com/ursilapradeep/42_Minishell" target="_blank" rel="noopener" data-i18n="projects.core.viewRepo">View repo →</a>
+                  <button type="button" class="btn btn-secondary btn-sm demo-open" data-demo="minishell" data-i18n="demo.try" hidden>Try it</button>
                 </div>
               </div>
             </article>
@@ -479,6 +481,40 @@
           </div>
         </div>
       </section>
+
+      <dialog class="demo" id="demo-minirt" aria-labelledby="demo-minirt-title">
+        <div class="demo-body">
+          <div class="demo-head">
+            <h2 id="demo-minirt-title" data-i18n="demo.rt.title">miniRT — turn the cylinder</h2>
+            <button type="button" class="btn btn-secondary btn-sm" data-demo-close data-i18n="demo.close">Close</button>
+          </div>
+          <div class="rt-stage" data-sprite="assets/demos/minirt-cylinder.jpg" role="img" aria-label="Ray-traced scene with a red sphere and a blue cylinder"></div>
+          <label class="rt-control">
+            <span data-i18n="demo.rt.label">Cylinder orientation — drag the picture or use the slider</span>
+            <input class="rt-slider" type="range" min="0" max="23" step="1" value="0" />
+          </label>
+          <pre class="rt-line" aria-live="polite"></pre>
+          <p class="demo-note" data-i18n="demo.rt.note">Every position is a frame rendered by the ray tracer itself from the scene line shown above. The slider only switches between those frames.</p>
+        </div>
+      </dialog>
+
+      <dialog class="demo" id="demo-minishell" aria-labelledby="demo-minishell-title">
+        <div class="demo-body">
+          <div class="demo-head">
+            <h2 id="demo-minishell-title" data-i18n="demo.msh.title">minishell — try a command</h2>
+            <button type="button" class="btn btn-secondary btn-sm" data-demo-close data-i18n="demo.close">Close</button>
+          </div>
+          <div class="msh-screen" data-recording="assets/demos/minishell.json" aria-live="polite"></div>
+          <form class="msh-form">
+            <span class="msh-prompt" aria-hidden="true">minishell$</span>
+            <input class="msh-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" disabled />
+          </form>
+          <p class="msh-chips-label" data-i18n="demo.msh.pick">Type one of these, or click it:</p>
+          <div class="msh-chips"></div>
+          <p class="demo-note" data-i18n="demo.msh.note">This is a replay: a C shell cannot run inside a browser, so each output here was recorded from the real minishell binary. Commands outside the list are not available.</p>
+          <p class="msh-unknown" hidden data-i18n="demo.msh.unknown">Not in this replay. Pick one of the commands listed below.</p>
+        </div>
+      </dialog>
     </main>
 
     <footer class="footer">
@@ -498,5 +534,6 @@
     <script src="js/nav.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/motion.js" defer></script>
+    <script src="js/demos.js" defer></script>
   </body>
 </html>
