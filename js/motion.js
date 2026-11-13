@@ -2,7 +2,8 @@
 //
 //  1. Fade-in on scroll for cards and headings that start below the first screen.
 //  2. Looping clips on project cards. A card opts in by putting data-loop-mp4 (and optionally
-//     data-loop-webm) on its .case-media element; the clip is fetched only when the card
+//     data-loop-webm, and data-loop-position to choose which part stays in frame) on its
+//     .case-media element; the clip is fetched only when the card
 //     scrolls into view and pauses when it leaves, so it costs nothing at page load.
 //
 // Visitors who ask their system for reduced motion get neither: the static image stays.
@@ -66,6 +67,7 @@
     video.setAttribute('playsinline', '');
     video.setAttribute('aria-hidden', 'true');
     video.preload = 'auto';
+    if (media.dataset.loopPosition) video.style.objectPosition = media.dataset.loopPosition;
     [['loopWebm', 'video/webm'], ['loopMp4', 'video/mp4']].forEach(function (pair) {
       var src = media.dataset[pair[0]];
       if (!src) return;
