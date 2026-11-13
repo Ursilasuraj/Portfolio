@@ -902,28 +902,25 @@ a {
   }
 }
 
-/* Featured Work case studies (home page): image beside a problem / built / hard / tech list. */
+/* Featured Work (home page): three compact cards in a row, each a small screenshot over
+   short problem / built / hard / tech notes. */
 .case-list {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
   margin-top: 1.75rem;
+  align-items: stretch;
 }
 
 .case-card {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 1.75rem;
-  align-items: start;
-  padding: 1.5rem;
-}
-
-.case-card:nth-child(even) .case-media {
-  order: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .case-media {
   display: block;
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: #0d0906;
@@ -932,42 +929,60 @@ a {
 .case-media img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
+  object-position: top left;
 }
 
 .case-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   min-width: 0;
+  margin-top: 0.85rem;
 }
 
 .case-body .project-card-head h3 {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
+}
+
+.case-body .meta {
+  font-size: 0.8rem;
 }
 
 .case-facts {
-  display: grid;
-  grid-template-columns: 8.5rem minmax(0, 1fr);
-  gap: 0.7rem 1rem;
-  margin: 1rem 0 0;
+  margin: 0.6rem 0 0;
 }
 
 .case-facts dt {
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  padding-top: 0.2rem;
+  margin-top: 0.6rem;
 }
 
 .case-facts dd {
-  margin: 0;
+  margin: 0.1rem 0 0;
   color: var(--muted);
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .case-facts .tag-list {
-  margin: 0;
+  margin: 0.3rem 0 0;
+}
+
+.case-facts .tag-list li {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+}
+
+.case-body .project-links {
+  margin-top: auto;
+  padding-top: 0.8rem;
 }
 
 .earlier-heading {
@@ -1005,28 +1020,17 @@ a {
   font-size: 0.78rem;
 }
 
-@media (max-width: 860px) {
-  .case-card {
+@media (max-width: 900px) {
+  .case-list {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.1rem;
-    padding: 1.1rem;
   }
 
-  .case-card:nth-child(even) .case-media {
-    order: 0;
+  .case-media img {
+    height: 180px;
   }
 }
 
 @media (max-width: 600px) {
-  .case-facts {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.2rem;
-  }
-
-  .case-facts dd {
-    margin-bottom: 0.6rem;
-  }
-
   .earlier-row {
     grid-template-columns: minmax(0, 1fr);
   }
