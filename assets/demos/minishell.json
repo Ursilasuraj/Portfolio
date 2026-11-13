@@ -1,0 +1,62 @@
+[
+ {
+  "cmd": "echo hello | tr a-z A-Z",
+  "out": "HELLO\n",
+  "status": 0
+ },
+ {
+  "cmd": "ls",
+  "out": "hello.txt\nnotes.txt\nsrc\n",
+  "status": 0
+ },
+ {
+  "cmd": "ls | wc -l",
+  "out": "3\n",
+  "status": 0
+ },
+ {
+  "cmd": "cat hello.txt",
+  "out": "hello from minishell\n",
+  "status": 0
+ },
+ {
+  "cmd": "cat < hello.txt | wc -w",
+  "out": "3\n",
+  "status": 0
+ },
+ {
+  "cmd": "echo \"double   quotes keep spaces\" 'single quotes keep $USER'",
+  "out": "double   quotes keep spaces single quotes keep $USER\n",
+  "status": 0
+ },
+ {
+  "cmd": "echo $USER",
+  "out": "guest\n",
+  "status": 0
+ },
+ {
+  "cmd": "env | grep USER",
+  "out": "USER=guest\n",
+  "status": 0
+ },
+ {
+  "cmd": "echo $?",
+  "out": "0\n",
+  "status": 0
+ },
+ {
+  "cmd": "nosuchcommand",
+  "out": "nosuchcommand: command not found\n",
+  "status": 127
+ },
+ {
+  "cmd": "| ls",
+  "out": "minishell: syntax error near unexpected token '|'\n",
+  "status": 2
+ },
+ {
+  "cmd": "cat missing.txt",
+  "out": "cat: missing.txt: No such file or directory\n",
+  "status": 1
+ }
+]

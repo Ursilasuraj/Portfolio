@@ -1421,3 +1421,233 @@ body {
     border-top: 1px solid var(--border);
   }
 }
+
+/* ==========================================================================
+   Motion (js/motion.js adds .reveal / .is-visible and the looping clips).
+   Everything here sits behind prefers-reduced-motion: no-preference.
+   ========================================================================== */
+
+/* Looping clip laid over a project card's static image */
+.case-media {
+  position: relative;
+}
+
+.case-loop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.case-media.has-loop .case-loop {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Fade-in on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .case-card.reveal:nth-child(2) {
+    transition-delay: 80ms;
+  }
+
+  .case-card.reveal:nth-child(3) {
+    transition-delay: 160ms;
+  }
+
+  /* Hover lift on project cards */
+  .case-card,
+  .project-card,
+  .earlier-card {
+    transition: transform 180ms ease, border-color 180ms ease;
+  }
+
+  .case-card:not(.reveal):hover,
+  .project-card:not(.reveal):hover,
+  .earlier-card:not(.reveal):hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+}
+
+/* ==========================================================================
+   Interactive project demos (js/demos.js): a dialog per project.
+   ========================================================================== */
+.case-body .project-links {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.demo-open {
+  font-family: inherit;
+}
+
+.demo {
+  width: min(720px, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--text);
+}
+
+.demo::backdrop {
+  background: rgba(10, 12, 16, 0.6);
+}
+
+.demo-body {
+  padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.demo-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.demo-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.demo-note {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+/* miniRT */
+.rt-stage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #0d0906;
+  background-repeat: no-repeat;
+  background-size: 600% 400%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.rt-control {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.rt-slider {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.rt-line {
+  margin: 0.6rem 0 0;
+  padding: 0.5rem 0.7rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
+/* minishell */
+.msh-screen {
+  height: 240px;
+  overflow-y: auto;
+  padding: 0.8rem 0.9rem;
+  background: #16181d;
+  color: #e6e6e6;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.msh-cmd {
+  color: #9dbfe0;
+}
+
+.msh-note {
+  color: #d9b36c;
+}
+
+.msh-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: #1d2026;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 0.84rem;
+}
+
+.msh-prompt {
+  color: #9dbfe0;
+}
+
+.msh-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #e6e6e6;
+  font: inherit;
+  padding: 0.25rem 0;
+}
+
+.msh-input:focus-visible {
+  outline: 1px solid #9dbfe0;
+  outline-offset: 2px;
+}
+
+.msh-chips-label {
+  margin: 0.9rem 0 0.4rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.msh-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.msh-chip {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.msh-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

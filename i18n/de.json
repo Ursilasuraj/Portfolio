@@ -191,5 +191,14 @@
   "home.earlier.atm.meta": "2014 – 2015 · Abschlussprojekt (BE) · Viererteam",
   "home.earlier.atm.body": "Prototyp für Banktransaktionen, abgesichert durch biometrische Authentifizierung und Kartenleser, auf einer MySQL-Datenbank.",
   "home.earlier.retail.meta": "2018 · MBA-Projekt, Bangalore",
-  "home.earlier.retail.body": "Kundenumfragen bei kleinen Einzelhändlern, bereinigt und in Excel-Dashboards und Einkaufsempfehlungen überführt."
+  "home.earlier.retail.body": "Kundenumfragen bei kleinen Einzelhändlern, bereinigt und in Excel-Dashboards und Einkaufsempfehlungen überführt.",
+  "demo.try": "Ausprobieren",
+  "demo.close": "Schließen",
+  "demo.rt.title": "miniRT — den Zylinder drehen",
+  "demo.rt.label": "Ausrichtung des Zylinders — Bild ziehen oder Regler benutzen",
+  "demo.rt.note": "Jede Position ist ein Bild, das der Raytracer selbst aus der oben gezeigten Szenenzeile gerendert hat. Der Regler wechselt nur zwischen diesen Bildern.",
+  "demo.msh.title": "minishell — einen Befehl ausprobieren",
+  "demo.msh.pick": "Einen dieser Befehle eintippen oder anklicken:",
+  "demo.msh.note": "Dies ist eine Wiedergabe: Eine C-Shell kann nicht im Browser laufen, daher wurde jede Ausgabe hier mit dem echten minishell-Programm aufgezeichnet. Befehle außerhalb der Liste stehen nicht zur Verfügung.",
+  "demo.msh.unknown": "Nicht in dieser Wiedergabe enthalten. Bitte einen der unten aufgeführten Befehle wählen."
 }
